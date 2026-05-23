@@ -114,7 +114,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-100">
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-900">
         <!-- Background Video -->
         <div class="absolute inset-0 z-0">
             <!-- Video nền -->
@@ -122,23 +122,25 @@
                 <source src="video-aqara.mp4" type="video/mp4">
                 Trình duyệt của bạn không hỗ trợ thẻ video.
             </video>
-            <!-- Overlay màu trắng giảm độ mờ đi rất nhiều để lộ rõ video (chỉ mờ 30% ở trên và chuyển dần sang màu nền xám nhạt ở dưới) -->
-            <div class="absolute inset-0 bg-gradient-to-b from-white/30 via-white/40 to-gray-50"></div>
+            <!-- Overlay đen mờ (40-60%) giúp chữ trắng nổi bật lên và giảm độ rối của chi tiết video -->
+            <div class="absolute inset-0 bg-black/50"></div>
+            <!-- Chuyển dần sang nền trắng của section dưới -->
+            <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
         </div>
         
-        <!-- Nội dung Hero (thêm drop-shadow để chữ nổi rõ trên cả nền video tối hay sáng) -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center drop-shadow-md">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight max-w-5xl uppercase tracking-tight">
-                NÂNG TẦM CUỘC SỐNG <span class="text-cyan-600">THÔNG MINH</span>
+        <!-- Nội dung Hero (Chữ đổi sang màu Trắng/Sáng, căn giữa, có đổ bóng mờ) -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center mt-20">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight max-w-5xl uppercase tracking-tight drop-shadow-xl shadow-black">
+                NÂNG TẦM CUỘC SỐNG <span class="text-cyan-400 drop-shadow-md">THÔNG MINH</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-700 mb-10 max-w-2xl font-medium leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl font-light leading-relaxed drop-shadow-md shadow-black">
                 Giải pháp toàn diện cho ngôi nhà của bạn.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#demo" class="bg-cyan-500 text-white text-center font-bold text-lg py-4 px-10 rounded-full hover:bg-cyan-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                <a href="#demo" class="bg-cyan-500 text-white text-center font-bold text-lg py-4 px-10 rounded-full hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(90,146,230,0.6)] hover:shadow-[0_0_30px_rgba(90,146,230,0.8)] flex items-center justify-center gap-2 border border-cyan-400">
                     Khám Phá Giao Diện <i class="fa-solid fa-arrow-right"></i>
                 </a>
-                <a href="#contact" class="border-2 border-gray-300 text-gray-800 text-center font-bold text-lg py-4 px-10 rounded-full hover:border-cyan-500 hover:text-cyan-600 bg-white/60 backdrop-blur-md transition-all shadow-sm">
+                <a href="#contact" class="border-2 border-white/70 text-white text-center font-bold text-lg py-4 px-10 rounded-full hover:bg-white/10 hover:border-white backdrop-blur-md transition-all shadow-lg">
                     Nhận Tư Vấn Cấu Hình
                 </a>
             </div>
