@@ -199,25 +199,26 @@
         </div>
     </section>
 
-    <!-- Signature Product Section (Aqara Camera Hub G3) -->
+    <!-- Signature Product Section (Aqara Flagship Carousel) -->
     <section id="signature-product" class="py-24 bg-white relative overflow-hidden border-b border-gray-200">
         <!-- Chữ mờ chạy nền (Watermark) -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.02]">
-            <h2 class="text-[150px] md:text-[250px] font-black text-gray-900 whitespace-nowrap tracking-tighter">AQARA G3</h2>
+            <h2 id="sig-watermark" class="text-[150px] md:text-[250px] font-black text-gray-900 whitespace-nowrap tracking-tighter transition-opacity duration-500">AQARA G3</h2>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
+            <!-- Wrapper để xử lý hiệu ứng mờ dần (Fade) khi chuyển slide -->
+            <div id="sig-wrapper" class="flex flex-col lg:flex-row items-center gap-16 transition-opacity duration-500 opacity-100">
                 
                 <!-- Cột Trái: Thông tin -->
                 <div class="w-full lg:w-1/3 text-left">
-                    <h3 class="text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">Camera Hub</h3>
-                    <h3 class="text-5xl font-extrabold text-cyan-600 mb-6 tracking-tight">Aqara G3</h3>
+                    <h3 id="sig-type" class="text-3xl lg:text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">Camera Hub</h3>
+                    <h3 id="sig-name" class="text-4xl lg:text-5xl font-extrabold text-cyan-600 mb-6 tracking-tight">Aqara G3</h3>
                     
-                    <p class="text-gray-600 text-base leading-relaxed mb-6 font-light">
-                        Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là "bộ não" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.
+                    <p id="sig-desc1" class="text-gray-600 text-base leading-relaxed mb-4 font-light">
+                        Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là "bộ脑" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.
                     </p>
-                    <p class="text-gray-600 text-base leading-relaxed mb-8 font-light">
+                    <p id="sig-desc2" class="text-gray-600 text-base leading-relaxed mb-8 font-light">
                         Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.
                     </p>
                     
@@ -226,50 +227,31 @@
                     </a>
                 </div>
 
-                <!-- Cột Giữa: Hình ảnh sản phẩm -->
-                <div class="w-full lg:w-1/3 flex justify-center relative">
+                <!-- Cột Giữa: Hình ảnh sản phẩm & Điều hướng -->
+                <div class="w-full lg:w-1/3 flex flex-col items-center relative">
                     <!-- Hiệu ứng Glow phía sau sản phẩm -->
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-100 rounded-full blur-[60px]"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-100 rounded-full blur-[60px] pointer-events-none z-0"></div>
                     
-                    <!-- Hình ảnh sản phẩm -->
-                    <div class="relative z-10 w-full max-w-[300px] aspect-square bg-gray-50 rounded-3xl border border-gray-200 flex items-center justify-center p-8 shadow-xl">
-                         <div class="text-center text-gray-400">
-                             <i class="fa-solid fa-camera-retro text-6xl mb-4 text-cyan-500/50"></i><br>
-                             <span class="text-sm font-medium">[Hình ảnh Aqara G3]</span>
-                         </div>
+                    <!-- Hình ảnh sản phẩm (Thay thế Icon bằng thẻ IMG) -->
+                    <div class="relative z-10 w-full max-w-[300px] aspect-square bg-gray-50 rounded-3xl border border-gray-200 flex items-center justify-center p-4 shadow-xl mb-8 overflow-hidden group">
+                         <!-- Ảnh sản phẩm sẽ được thay đổi thông qua JS -->
+                         <img id="sig-image" src="aqara-g3.png" alt="Aqara Product" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Nút điều hướng Trái / Phải -->
+                    <div class="flex gap-4 relative z-20">
+                        <button id="btn-prev-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-500 hover:border-cyan-500 hover:text-cyan-600 hover:shadow-md transition-all flex items-center justify-center">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button id="btn-next-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-500 hover:border-cyan-500 hover:text-cyan-600 hover:shadow-md transition-all flex items-center justify-center">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Cột Phải: Các tính năng nổi bật -->
-                <div class="w-full lg:w-1/3 flex flex-col gap-4">
-                    <!-- Feature Card 1 -->
-                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
-                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">AI Nhận Diện Cử Chỉ</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed font-light">
-                            Nhận biết các cử chỉ tay để tự động chạy các kịch bản thông minh mà không cần chạm vào điện thoại.
-                        </p>
-                    </div>
-                    <!-- Feature Card 2 -->
-                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
-                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">Hub Zigbee 3.0 Tích Hợp</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed font-light">
-                            Kết nối và điều khiển trực tiếp lên đến 128 thiết bị con của hệ sinh thái Aqara siêu ổn định.
-                        </p>
-                    </div>
-                    <!-- Feature Card 3 -->
-                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
-                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">Độ Phân Giải 2K 1296p</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed font-light">
-                            Cảm biến độ phân giải cao mang lại chất lượng hình ảnh sắc nét, rõ ràng ngay cả trong điều kiện thiếu sáng.
-                        </p>
-                    </div>
-                    <!-- Feature Card 4 -->
-                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
-                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">Điều Khiển Hồng Ngoại (IR)</h4>
-                        <p class="text-gray-500 text-xs leading-relaxed font-light">
-                            Học lệnh hồng ngoại để điều khiển trực tiếp TV, máy lạnh cũ không có tính năng thông minh.
-                        </p>
-                    </div>
+                <div id="sig-features" class="w-full lg:w-1/3 flex flex-col gap-4">
+                    <!-- Các card tính năng sẽ được JS chèn tự động vào đây -->
                 </div>
             </div>
         </div>
@@ -490,6 +472,7 @@
     <!-- Script xử lý tương tác UI -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- LOGIC CHO BẢNG ĐIỀU KHIỂN (INTERACTIVE DEMO) ---
             const toggle = document.getElementById('light-toggle');
             const iconBg = document.getElementById('light-icon-bg');
             const icon = document.getElementById('light-icon');
@@ -499,11 +482,9 @@
             const brightnessValue = document.getElementById('brightness-value');
             const card = document.getElementById('light-card');
 
-            // Cập nhật Logic Toggle cho giao diện Sáng (Light Theme)
             if (toggle && slider) {
                 toggle.addEventListener('change', (e) => {
                     if(e.target.checked) {
-                        // Trạng thái BẬT (Light Theme)
                         iconBg.classList.replace('bg-gray-50', 'bg-cyan-50');
                         iconBg.classList.replace('border-gray-100', 'border-cyan-200');
                         icon.classList.replace('text-gray-400', 'text-cyan-600');
@@ -512,11 +493,8 @@
                         statusText.classList.replace('text-gray-400', 'text-cyan-600');
                         card.classList.replace('border-gray-200', 'border-cyan-400');
                         card.classList.add('shadow-md');
-                        
-                        // Kích hoạt slider
                         sliderContainer.classList.remove('opacity-50', 'pointer-events-none');
                     } else {
-                        // Trạng thái TẮT (Light Theme)
                         iconBg.classList.replace('bg-cyan-50', 'bg-gray-50');
                         iconBg.classList.replace('border-cyan-200', 'border-gray-100');
                         icon.classList.replace('text-cyan-600', 'text-gray-400');
@@ -525,40 +503,164 @@
                         statusText.classList.replace('text-cyan-600', 'text-gray-400');
                         card.classList.replace('border-cyan-400', 'border-gray-200');
                         card.classList.remove('shadow-md');
-                        iconBg.style.boxShadow = 'none'; // reset shadow
-                        
-                        // Khóa slider
+                        iconBg.style.boxShadow = 'none';
                         sliderContainer.classList.add('opacity-50', 'pointer-events-none');
                     }
                 });
 
-                // Logic xử lý khi kéo thanh trượt độ sáng
                 slider.addEventListener('input', (e) => {
                     const val = e.target.value;
                     brightnessValue.textContent = `${val}%`;
                     statusText.textContent = `Sáng ${val}%`;
-                    
-                    // Thay đổi shadow đèn minh họa realtime (màu Cyan cho nền trắng)
                     const opacity = val / 100;
                     iconBg.style.boxShadow = `0 0 ${10 + (opacity * 15)}px rgba(90, 146, 230, ${opacity * 0.6})`;
                 });
             }
 
-            // Logic xử lý click cho danh mục sản phẩm Aqara (Light Theme)
+            // --- LOGIC CHO DANH MỤC AQARA LIST ---
             const categoryItems = document.querySelectorAll('.category-item');
-            
             categoryItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    // Xóa trạng thái active của tất cả các thẻ, đưa về inactive
                     categoryItems.forEach(el => {
                         el.className = 'category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium';
                     });
-                    
-                    // Thêm trạng thái active cho thẻ vừa được click
                     item.className = 'category-item cursor-pointer text-cyan-600 border-l-2 border-cyan-500 pl-4 py-3 font-bold bg-cyan-50 rounded-r-lg transition-all';
-                    
                 });
             });
+
+            // --- LOGIC CHO SIGNATURE CAROUSEL (4 SẢN PHẨM NỔI BẬT) ---
+            const signatureProducts = [
+                {
+                    watermark: "AQARA G3",
+                    type: "Camera Hub",
+                    name: "Aqara G3",
+                    desc1: "Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là \"bộ não\" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.",
+                    desc2: "Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.",
+                    imageUrl: "aqara-g3.png", // <--- Thay tên file ảnh G3 của anh vào đây
+                    features: [
+                        { title: "AI Nhận Diện Cử Chỉ", desc: "Nhận biết các cử chỉ tay để tự động chạy các kịch bản thông minh mà không cần chạm vào điện thoại." },
+                        { title: "Hub Zigbee 3.0 Tích Hợp", desc: "Kết nối và điều khiển trực tiếp lên đến 128 thiết bị con của hệ sinh thái Aqara siêu ổn định." },
+                        { title: "Độ Phân Giải 2K 1296p", desc: "Cảm biến độ phân giải cao mang lại chất lượng hình ảnh sắc nét ngay cả trong điều kiện thiếu sáng." },
+                        { title: "Điều Khiển Hồng Ngoại (IR)", desc: "Liên kết trực tiếp với các hãng TV, máy lạnh lớn trên thế giới hoặc dễ dàng học lệnh điều khiển." }
+                    ]
+                },
+                {
+                    watermark: "S1 PLUS",
+                    type: "Smart Panel",
+                    name: "Aqara S1 Plus",
+                    desc1: "Màn hình điều khiển trung tâm kích thước 6.9 inch, mang đến trải nghiệm tương tác trực quan và cực kỳ sang trọng cho không gian sống.",
+                    desc2: "Thay thế hàng loạt công tắc cơ truyền thống. Kiểm soát ánh sáng, rèm cửa, nhiệt độ và theo dõi trạng thái nhà ngay trên một giao diện duy nhất.",
+                    imageUrl: "aqara-s1plus.png", // <--- Thay tên file ảnh S1 Plus của anh vào đây
+                    features: [
+                        { title: "Màn Hình 6.9 Inch", desc: "Kích thước siêu lớn hiển thị thông tin rõ ràng, giao diện được tối ưu cho thao tác chạm mượt mà." },
+                        { title: "Cá Nhân Hóa Giao Diện", desc: "Hỗ trợ thay đổi theme, upload ảnh nền cá nhân và tùy biến layout các nút điều khiển theo thói quen." },
+                        { title: "Tích Hợp 3 Lộ Đèn", desc: "Chứa sẵn 3 relay vật lý bên trong để điều khiển trực tiếp 3 lộ đèn mà không cần mua thêm module." },
+                        { title: "Màn Hình Đa Chức Năng", desc: "Xem được camera, đàm thoại trực tiếp, cho phép mở khóa, mở cổng trực tiếp trên màn hình." }
+                    ]
+                },
+                {
+                    watermark: "Z1 PRO",
+                    type: "Smart Switch",
+                    name: "Aqara Z1 Pro",
+                    desc1: "Định nghĩa lại tiêu chuẩn của công tắc thông minh với dải cảm ứng trượt (slider) độc quyền và ngôn ngữ thiết kế hoàn mỹ.",
+                    desc2: "Trải nghiệm dimming đèn hoặc mở rèm cửa cực kỳ mượt mà chỉ bằng thao tác vuốt dọc theo thân công tắc, kết hợp phản hồi rung Haptic chân thực.",
+                    imageUrl: "aqara-z1pro.png", // <--- Thay tên file ảnh Z1 Pro của anh vào đây
+                    features: [
+                        { title: "Slider Cảm Ứng", desc: "Dải trượt cảm ứng dùng để điều chỉnh độ sáng đèn, rèm cửa hoặc nhiệt độ màu (Tuning) siêu mượt." },
+                        { title: "Phản Hồi Chạm Cơ Học", desc: "Chạm mở đèn tinh tế nhẹ nhàng, chính xác, không phát ra tiếng ồn. Cảm giác như phím đàn." },
+                        { title: "Bố Trí Linh Hoạt", desc: "Kích thước vuông 86x86 phù hợp với hầu hết công trình hiện đại, bố trí lên đến 3 nút nhấn đèn và 1 nút nhấn ngữ cảnh cho phép tối ưu tự động hóa." },
+                        { title: "Chuẩn Zigbee 3.0", desc: "Đảm bảo kết nối mạng lưới siêu nhanh, ổn định và tương thích chéo hoàn hảo với hệ thống Apple Home." }
+                    ]
+                },
+                {
+                    watermark: "T2 PRO",
+                    type: "Smart Downlight",
+                    name: "Aqara T2 Pro",
+                    desc1: "Giải pháp chiếu sáng kiến trúc đỉnh cao, mang lại ánh sáng chất lượng rực rỡ và thiết kế chống chói sâu (Deep Glare-proof) tinh tế bảo vệ mắt.",
+                    desc2: "Mô phỏng hoàn hảo nhịp sinh học tự nhiên. Hệ thống tự động thay đổi độ sáng và nhiệt độ màu theo chu kỳ mặt trời để cải thiện sức khỏe người dùng.",
+                    imageUrl: "aqara-t2pro.png", // <--- Thay tên file ảnh T2 Pro của anh vào đây
+                    features: [
+                        { title: "Dimming 1/10000", desc: "Công nghệ làm mờ siêu mịn, không nhấp nháy, chuyển đổi trạng thái ánh sáng êm ái như ánh sáng tự nhiên." },
+                        { title: "Chỉ Số Hoàn Màu RA>96", desc: "Phản ánh trung thực và rực rỡ màu sắc của đồ nội thất, tranh ảnh nghệ thuật trong không gian sống." },
+                        { title: "Ánh Sáng Sinh Học", desc: "Đồng bộ dải nhiệt độ màu (2700K - 6000K) theo thời gian thực, hỗ trợ giấc ngủ và sự tập trung." },
+                        { title: "Tản Nhiệt Cao Cấp", desc: "Thiết kế thân nhôm đúc nguyên khối tản nhiệt tuyệt vời giúp tăng tuổi thọ và độ ổn định của chip LED." }
+                    ]
+                }
+            ];
+
+            let currentSigIndex = 0;
+            const sigWrapper = document.getElementById('sig-wrapper');
+            const sigWatermark = document.getElementById('sig-watermark');
+            const sigType = document.getElementById('sig-type');
+            const sigName = document.getElementById('sig-name');
+            const sigDesc1 = document.getElementById('sig-desc1');
+            const sigDesc2 = document.getElementById('sig-desc2');
+            const sigImage = document.getElementById('sig-image'); // <--- ID của thẻ ảnh
+            const sigFeatures = document.getElementById('sig-features');
+            
+            const btnPrevSig = document.getElementById('btn-prev-sig');
+            const btnNextSig = document.getElementById('btn-next-sig');
+
+            function renderSignatureProduct(index) {
+                const product = signatureProducts[index];
+                
+                // Cập nhật nội dung HTML
+                sigWatermark.textContent = product.watermark;
+                sigType.textContent = product.type;
+                sigName.textContent = product.name;
+                sigDesc1.textContent = product.desc1;
+                sigDesc2.textContent = product.desc2;
+                
+                // Cập nhật hình ảnh sản phẩm
+                sigImage.src = product.imageUrl;
+                sigImage.alt = product.name;
+
+                // Xây dựng các thẻ Features
+                sigFeatures.innerHTML = '';
+                product.features.forEach(feature => {
+                    const card = `
+                        <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
+                            <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">${feature.title}</h4>
+                            <p class="text-gray-500 text-xs leading-relaxed font-light">${feature.desc}</p>
+                        </div>
+                    `;
+                    sigFeatures.innerHTML += card;
+                });
+            }
+
+            function changeSignatureProduct(direction) {
+                // Hiệu ứng Fade-out
+                sigWrapper.classList.remove('opacity-100');
+                sigWrapper.classList.add('opacity-0');
+                sigWatermark.classList.remove('opacity-[0.02]');
+                sigWatermark.classList.add('opacity-0');
+
+                setTimeout(() => {
+                    // Chuyển Index
+                    if (direction === 'next') {
+                        currentSigIndex = (currentSigIndex + 1) % signatureProducts.length;
+                    } else {
+                        currentSigIndex = (currentSigIndex - 1 + signatureProducts.length) % signatureProducts.length;
+                    }
+                    
+                    // Render lại dữ liệu
+                    renderSignatureProduct(currentSigIndex);
+
+                    // Hiệu ứng Fade-in
+                    sigWrapper.classList.remove('opacity-0');
+                    sigWrapper.classList.add('opacity-100');
+                    sigWatermark.classList.remove('opacity-0');
+                    sigWatermark.classList.add('opacity-[0.02]');
+                }, 300); // Đợi 300ms cho hiệu ứng mờ kết thúc rồi mới đổi
+            }
+
+            if (btnPrevSig && btnNextSig) {
+                // Khởi tạo sản phẩm đầu tiên khi load web
+                renderSignatureProduct(currentSigIndex);
+
+                btnPrevSig.addEventListener('click', () => changeSignatureProduct('prev'));
+                btnNextSig.addEventListener('click', () => changeSignatureProduct('next'));
+            }
         });
     </script>
 </body>
