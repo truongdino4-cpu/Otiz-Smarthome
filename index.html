@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otiz Smarthome - Nâng Tầm Cuộc Sống Thông Minh</title>
+    
+    <!-- Google Fonts: Đổi sang font Inter chuẩn UI quốc tế, chống lỗi font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome cho các icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tích hợp Tailwind CSS trực tiếp qua CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        cyan: {
+                            50: '#F0F5FF',
+                            100: '#E0EBFB',
+                            400: '#8AB4F8', 
+                            500: '#5A92E6', // Đậm hơn một chút cho nút bấm
+                            600: '#3B76D6', // Dành cho chữ trên nền trắng để dễ đọc
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'neon': '0 0 15px rgba(90, 146, 230, 0.4)',
+                        'neon-hover': '0 0 25px rgba(90, 146, 230, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- CSS Tùy chỉnh thêm -->
+    <style>
+        /* Tùy chỉnh thanh cuộn trình duyệt */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f9fafb; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+        
+        /* Hiệu ứng mượt mà khi hover hình ảnh */
+        .img-zoom-hover { transition: transform 0.5s ease; }
+        .group:hover .img-zoom-hover { transform: scale(1.05); }
+
+        /* Tùy chỉnh thanh trượt (Slider) */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #5A92E6;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 2px 6px rgba(90,146,230,0.4);
+            transition: transform 0.1s;
+        }
+        input[type=range]::-webkit-slider-thumb:active { transform: scale(1.2); }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #e5e7eb;
+            border-radius: 2px;
+        }
+        
+        /* Tùy chỉnh Nút gạt (Toggle Switch) */
+        .toggle-checkbox:checked { right: 0; border-color: #5A92E6; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #5A92E6; }
+        .toggle-checkbox { transition: all 0.3s; }
+        .toggle-label { transition: all 0.3s; }
+    </style>
+</head>
+<body class="bg-white text-gray-600 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-baseline gap-0.5 group">
+                <span class="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-wide">OTIZ</span>
+                <span class="text-sm md:text-base font-bold text-cyan-600 tracking-widest">SMARTHOME</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-gray-900 hover:text-cyan-600 transition font-medium">Trang chủ</a>
+                <a href="#features" class="text-gray-600 hover:text-cyan-600 transition font-medium">Giải pháp</a>
+                <a href="#signature-product" class="text-gray-600 hover:text-cyan-600 transition font-medium">Sản phẩm</a>
+                <a href="#demo" class="text-gray-600 hover:text-cyan-600 transition font-medium">Trải nghiệm</a>
+                <a href="#contact" class="text-gray-600 hover:text-cyan-600 transition font-medium">Liên hệ</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-cyan-600">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/11085010451558727751_0" alt="Luxury Smart Home Penthouse" class="w-full h-full object-cover" />
+            <!-- Overlay màu trắng mờ để làm nổi bật chữ -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/30"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight max-w-5xl uppercase tracking-tight">
+                NÂNG TẦM CUỘC SỐNG <span class="text-cyan-600">THÔNG MINH</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl font-light leading-relaxed">
+                Giải pháp toàn diện cho ngôi nhà của bạn.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#demo" class="bg-cyan-500 text-white text-center font-bold text-lg py-4 px-10 rounded-full hover:bg-cyan-600 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                    Khám Phá Giao Diện <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="border-2 border-gray-300 text-gray-700 text-center font-bold text-lg py-4 px-10 rounded-full hover:border-cyan-500 hover:text-cyan-600 bg-white/80 backdrop-blur-sm transition-all shadow-sm">
+                    Nhận Tư Vấn Cấu Hình
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (Hệ Sinh Thái Toàn Diện) -->
+    <section id="features" class="py-24 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Hệ Sinh Thái <span class="text-cyan-600">Toàn Diện</span></h2>
+                <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed">Mọi thiết bị điện trong nhà đều được kết nối và quản lý thông qua một nền tảng duy nhất, tối ưu trải nghiệm cho từng kịch bản sống.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Giải pháp 1: Chiếu sáng -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-cyan-50 transition-colors">
+                        <i class="fa-regular fa-lightbulb text-2xl text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Chiếu sáng thông minh</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light">Tự động hóa theo kịch bản, điều khiển độ sáng và nhiệt độ màu mượt mà. Chỉ số hoàn màu cao RA>90. Thiết kế chống chói sâu, choá đèn phù hợp với nhiều loại thiết kế.</p>
+                </div>
+                <!-- Giải pháp 2: Điều hòa -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-cyan-50 transition-colors">
+                        <i class="fa-solid fa-snowflake text-2xl text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Điều hòa & Không khí</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light">Kết hợp điều khiển với các hãng máy lạnh lớn trên thế giới. Đồng bộ với điều hòa trung tâm VRV, điều chỉnh nhiệt độ và lọc khí chủ động, tự động hoá hoặc dựa trên cảm biến môi trường.</p>
+                </div>
+                <!-- Giải pháp 3: An ninh -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-cyan-50 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-2xl text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">An ninh tổng thể</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light">Kiểm soát an toàn 24/7 với hệ thống camera AI, khóa cửa thông minh và báo động chống đột nhập đa vùng.</p>
+                </div>
+                <!-- Giải pháp 4: Rèm cửa -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-cyan-50 transition-colors">
+                        <i class="fa-solid fa-person-shelter text-2xl text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Rèm cửa tự động</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed font-light">Hẹn giờ đóng mở theo ánh sáng tự nhiên, bảo vệ nội thất và tiết kiệm năng lượng hiệu quả.</p>
+                </div>
+            </div>
+
+            <!-- Ghi chú các tính năng mở rộng -->
+            <div class="text-center">
+                <p class="text-gray-500 font-light italic">
+                    * Và các hệ thống mở rộng khác: Cổng/Cửa tự động, Âm thanh đa vùng, Phòng chiếu phim, Karaoke...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Product Section (Aqara Camera Hub G3) -->
+    <section id="signature-product" class="py-24 bg-white relative overflow-hidden border-b border-gray-200">
+        <!-- Chữ mờ chạy nền (Watermark) -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.02]">
+            <h2 class="text-[150px] md:text-[250px] font-black text-gray-900 whitespace-nowrap tracking-tighter">AQARA G3</h2>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <!-- Cột Trái: Thông tin -->
+                <div class="w-full lg:w-1/3 text-left">
+                    <h3 class="text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">Camera Hub</h3>
+                    <h3 class="text-5xl font-extrabold text-cyan-600 mb-6 tracking-tight">Aqara G3</h3>
+                    
+                    <p class="text-gray-600 text-base leading-relaxed mb-6 font-light">
+                        Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là "bộ não" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.
+                    </p>
+                    <p class="text-gray-600 text-base leading-relaxed mb-8 font-light">
+                        Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.
+                    </p>
+                    
+                    <a href="#contact" class="inline-flex items-center gap-2 border-2 border-gray-200 text-gray-700 hover:border-cyan-500 hover:text-cyan-600 px-8 py-3 rounded-full transition-all duration-300 text-sm font-bold tracking-wide uppercase shadow-sm">
+                        Tìm hiểu thêm <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+
+                <!-- Cột Giữa: Hình ảnh sản phẩm -->
+                <div class="w-full lg:w-1/3 flex justify-center relative">
+                    <!-- Hiệu ứng Glow phía sau sản phẩm -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-100 rounded-full blur-[60px]"></div>
+                    
+                    <!-- Hình ảnh sản phẩm -->
+                    <div class="relative z-10 w-full max-w-[300px] aspect-square bg-gray-50 rounded-3xl border border-gray-200 flex items-center justify-center p-8 shadow-xl">
+                         <div class="text-center text-gray-400">
+                             <i class="fa-solid fa-camera-retro text-6xl mb-4 text-cyan-500/50"></i><br>
+                             <span class="text-sm font-medium">[Hình ảnh Aqara G3]</span>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Cột Phải: Các tính năng nổi bật -->
+                <div class="w-full lg:w-1/3 flex flex-col gap-4">
+                    <!-- Feature Card 1 -->
+                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
+                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">AI Nhận Diện Cử Chỉ</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed font-light">
+                            Nhận biết các cử chỉ tay để tự động chạy các kịch bản thông minh mà không cần chạm vào điện thoại.
+                        </p>
+                    </div>
+                    <!-- Feature Card 2 -->
+                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
+                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">Hub Zigbee 3.0 Tích Hợp</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed font-light">
+                            Kết nối và điều khiển trực tiếp lên đến 128 thiết bị con của hệ sinh thái Aqara siêu ổn định.
+                        </p>
+                    </div>
+                    <!-- Feature Card 3 -->
+                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
+                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">Độ Phân Giải 2K 1296p</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed font-light">
+                            Cảm biến độ phân giải cao mang lại chất lượng hình ảnh sắc nét, rõ ràng ngay cả trong điều kiện thiếu sáng.
+                        </p>
+                    </div>
+                    <!-- Feature Card 4 -->
+                    <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
+                        <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">Điều Khiển Hồng Ngoại (IR)</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed font-light">
+                            Học lệnh hồng ngoại để điều khiển trực tiếp TV, máy lạnh cũ không có tính năng thông minh.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aqara Product List Section -->
+    <section id="aqara-products" class="py-24 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Khám Phá Hệ Sinh Thái <span class="text-cyan-600">Aqara</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">Hàng trăm thiết bị thông minh được phân chia theo từng hạng mục, đáp ứng mọi nhu cầu tự động hóa cho không gian của bạn.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Cột Trái: Danh mục Tags -->
+                <div class="w-full lg:w-1/4">
+                    <ul class="flex flex-col gap-1" id="aqara-category-list">
+                        <!-- Thẻ Active (Đang chọn) -->
+                        <li class="category-item cursor-pointer text-cyan-600 border-l-2 border-cyan-500 pl-4 py-3 font-bold bg-cyan-50 rounded-r-lg transition-all" data-category="hub">Hub</li>
+                        
+                        <!-- Các thẻ Inactive -->
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="switch">Switch & Plug</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="lighting">Lighting</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="sensor">Sensor</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="lock">Smart Door Lock</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="camera">Security Camera</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="curtain">Curtain Control</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="remote">Remote Control</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="hvac">HVAC</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="appliance">Domestic Appliances</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="kit">Kit</li>
+                        <li class="category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium" data-category="other">Other</li>
+                    </ul>
+                </div>
+
+                <!-- Cột Phải: Grid Sản phẩm -->
+                <div class="w-full lg:w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 content-start">
+                    
+                    <!-- Sản phẩm 1 -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-cyan-400 hover:-translate-y-1 hover:shadow-soft transition-all duration-300 group cursor-pointer aspect-square">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 group-hover:bg-cyan-50 transition-all">
+                            <i class="fa-solid fa-hockey-puck text-3xl text-gray-400 group-hover:text-cyan-600 transition-colors"></i>
+                        </div>
+                        <h4 class="text-gray-900 font-semibold text-sm">Aqara Hub M2</h4>
+                    </div>
+
+                    <!-- Sản phẩm 2 -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-cyan-400 hover:-translate-y-1 hover:shadow-soft transition-all duration-300 group cursor-pointer aspect-square">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 group-hover:bg-cyan-50 transition-all">
+                            <i class="fa-solid fa-plug text-3xl text-gray-400 group-hover:text-cyan-600 transition-colors"></i>
+                        </div>
+                        <h4 class="text-gray-900 font-semibold text-sm">Aqara Hub M1S Gen 2</h4>
+                    </div>
+
+                    <!-- Sản phẩm 3 -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-cyan-400 hover:-translate-y-1 hover:shadow-soft transition-all duration-300 group cursor-pointer aspect-square">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 group-hover:bg-cyan-50 transition-all">
+                            <i class="fa-solid fa-usb text-3xl text-gray-400 group-hover:text-cyan-600 transition-colors"></i>
+                        </div>
+                        <h4 class="text-gray-900 font-semibold text-sm">Aqara Hub E1</h4>
+                    </div>
+
+                    <!-- Sản phẩm 4 -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-cyan-400 hover:-translate-y-1 hover:shadow-soft transition-all duration-300 group cursor-pointer aspect-square">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 group-hover:bg-cyan-50 transition-all">
+                            <i class="fa-solid fa-camera-security text-3xl text-gray-400 group-hover:text-cyan-600 transition-colors"></i>
+                        </div>
+                        <h4 class="text-gray-900 font-semibold text-sm">Camera Hub G2H Pro</h4>
+                    </div>
+
+                    <!-- Sản phẩm 5 -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-cyan-400 hover:-translate-y-1 hover:shadow-soft transition-all duration-300 group cursor-pointer aspect-square">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center bg-gray-50 rounded-full group-hover:scale-110 group-hover:bg-cyan-50 transition-all">
+                            <i class="fa-solid fa-network-wired text-3xl text-gray-400 group-hover:text-cyan-600 transition-colors"></i>
+                        </div>
+                        <h4 class="text-gray-900 font-semibold text-sm">Aqara Hub M3</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive App Demo Section (Trải Nghiệm Điều Khiển) -->
+    <section id="demo" class="py-24 bg-white relative border-b border-gray-200">
+        <!-- Vòng sáng trang trí -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[80px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Trải Nghiệm <span class="text-cyan-600">Điều Khiển Trực Quan</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Mô phỏng giao diện Dashboard Component. Hãy thử gạt công tắc và kéo thanh trượt bên dưới để cảm nhận độ mượt mà.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10 items-center">
+                <!-- Hình ảnh Tablet/App minh họa -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="rounded-3xl border border-gray-200 overflow-hidden shadow-2xl relative z-10 bg-gray-50 p-2">
+                         <img src="http://googleusercontent.com/image_collection/image_retrieval/14815254841661687438_0" alt="Smart Home Dashboard Tablet" class="w-full h-auto rounded-2xl object-cover" />
+                    </div>
+                </div>
+
+                <!-- Bảng điều khiển tương tác mô phỏng -->
+                <div class="w-full lg:w-1/2 bg-gray-50 border border-gray-200 rounded-3xl p-8 relative z-10 shadow-xl">
+                    <div class="flex justify-between items-center mb-8 border-b border-gray-200 pb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Living Room</h3>
+                            <p class="text-sm text-gray-500">The Otiz Residence</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-3xl font-bold text-cyan-600" id="room-temp">24°C</p>
+                            <p class="text-xs text-gray-500">Nhiệt độ hiện tại</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Đèn -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-6 transition-colors duration-300 shadow-sm" id="light-card">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center transition-all duration-300" id="light-icon-bg">
+                                    <i class="fa-regular fa-lightbulb text-2xl text-gray-400 transition-colors duration-300" id="light-icon"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900">Đèn Chùm Chỉnh Sáng</h4>
+                                    <p class="text-sm text-gray-400 font-medium" id="light-status-text">Đang tắt</p>
+                                </div>
+                            </div>
+                            <!-- Toggle Switch -->
+                            <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" name="toggle" id="light-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer z-10 top-0 left-0"/>
+                                <label for="light-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </div>
+                        <!-- Slider (Ban đầu bị mờ) -->
+                        <div class="opacity-50 pointer-events-none transition-opacity duration-300" id="slider-container">
+                            <div class="flex justify-between text-xs text-gray-500 mb-2 font-mono">
+                                <span>0%</span>
+                                <span id="brightness-value">50%</span>
+                                <span>100%</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" id="light-slider">
+                        </div>
+                    </div>
+
+                    <!-- Card Rèm cửa -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                         <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center">
+                                    <i class="fa-solid fa-person-shelter text-2xl text-gray-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900">Rèm Ban Công</h4>
+                                    <p class="text-sm text-gray-500">Mở một nửa</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="w-10 h-10 rounded-full bg-gray-50 border border-gray-200 hover:bg-cyan-50 hover:text-cyan-600 hover:border-cyan-200 text-gray-500 transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-gray-50 border border-gray-200 hover:bg-cyan-50 hover:text-cyan-600 hover:border-cyan-200 text-gray-500 transition-all flex items-center justify-center"><i class="fa-solid fa-stop"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-gray-50 border border-gray-200 hover:bg-cyan-50 hover:text-cyan-600 hover:border-cyan-200 text-gray-500 transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Bắt Đầu <span class="text-cyan-600">Dự Án Của Bạn</span></h2>
+                    <p class="text-gray-600">Để lại thông tin, kỹ sư của Otiz sẽ liên hệ tư vấn cấu hình phần cứng và thiết kế theo mặt bằng nhà anh chị.</p>
+                </div>
+
+                <!-- Formspree Endpoint -->
+                <form action="https://formspree.io/f/MAY_BE_YOUR_FORMSPREE_ID" method="POST" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Họ và Tên</label>
+                            <input type="text" name="name" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Số điện thoại</label>
+                            <input type="tel" name="phone" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all shadow-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Diện tích & Nhu cầu dự kiến</label>
+                        <textarea name="message" rows="4" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all shadow-sm" placeholder="Ví dụ: Căn hộ 3 phòng ngủ, muốn làm đèn thông minh và rèm tự động..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-cyan-500 text-white font-bold text-lg py-4 rounded-lg hover:bg-cyan-600 transition-all shadow-md">
+                        GỬI YÊU CẦU TƯ VẤN
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-10 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <a href="#" class="inline-flex items-center gap-2 mb-6">
+                <i class="fa-solid fa-house-signal text-cyan-600 text-2xl"></i>
+                <span class="text-2xl font-extrabold text-gray-900 tracking-wide">Otiz<span class="text-cyan-600">Smarthome</span></span>
+            </a>
+            <p class="text-gray-500 text-sm mb-6">&copy; 2026 Otiz Smarthome. All rights reserved. Designed for The Otiz Residence.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-cyan-600 transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-cyan-600 transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-cyan-600 transition"><i class="fa-brands fa-youtube text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script xử lý tương tác UI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('light-toggle');
+            const iconBg = document.getElementById('light-icon-bg');
+            const icon = document.getElementById('light-icon');
+            const statusText = document.getElementById('light-status-text');
+            const sliderContainer = document.getElementById('slider-container');
+            const slider = document.getElementById('light-slider');
+            const brightnessValue = document.getElementById('brightness-value');
+            const card = document.getElementById('light-card');
+
+            // Cập nhật Logic Toggle cho giao diện Sáng (Light Theme)
+            if (toggle && slider) {
+                toggle.addEventListener('change', (e) => {
+                    if(e.target.checked) {
+                        // Trạng thái BẬT (Light Theme)
+                        iconBg.classList.replace('bg-gray-50', 'bg-cyan-50');
+                        iconBg.classList.replace('border-gray-100', 'border-cyan-200');
+                        icon.classList.replace('text-gray-400', 'text-cyan-600');
+                        icon.classList.replace('fa-regular', 'fa-solid');
+                        statusText.textContent = `Sáng ${slider.value}%`;
+                        statusText.classList.replace('text-gray-400', 'text-cyan-600');
+                        card.classList.replace('border-gray-200', 'border-cyan-400');
+                        card.classList.add('shadow-md');
+                        
+                        // Kích hoạt slider
+                        sliderContainer.classList.remove('opacity-50', 'pointer-events-none');
+                    } else {
+                        // Trạng thái TẮT (Light Theme)
+                        iconBg.classList.replace('bg-cyan-50', 'bg-gray-50');
+                        iconBg.classList.replace('border-cyan-200', 'border-gray-100');
+                        icon.classList.replace('text-cyan-600', 'text-gray-400');
+                        icon.classList.replace('fa-solid', 'fa-regular');
+                        statusText.textContent = 'Đang tắt';
+                        statusText.classList.replace('text-cyan-600', 'text-gray-400');
+                        card.classList.replace('border-cyan-400', 'border-gray-200');
+                        card.classList.remove('shadow-md');
+                        iconBg.style.boxShadow = 'none'; // reset shadow
+                        
+                        // Khóa slider
+                        sliderContainer.classList.add('opacity-50', 'pointer-events-none');
+                    }
+                });
+
+                // Logic xử lý khi kéo thanh trượt độ sáng
+                slider.addEventListener('input', (e) => {
+                    const val = e.target.value;
+                    brightnessValue.textContent = `${val}%`;
+                    statusText.textContent = `Sáng ${val}%`;
+                    
+                    // Thay đổi shadow đèn minh họa realtime (màu Cyan cho nền trắng)
+                    const opacity = val / 100;
+                    iconBg.style.boxShadow = `0 0 ${10 + (opacity * 15)}px rgba(90, 146, 230, ${opacity * 0.6})`;
+                });
+            }
+
+            // Logic xử lý click cho danh mục sản phẩm Aqara (Light Theme)
+            const categoryItems = document.querySelectorAll('.category-item');
+            
+            categoryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Xóa trạng thái active của tất cả các thẻ, đưa về inactive
+                    categoryItems.forEach(el => {
+                        el.className = 'category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium';
+                    });
+                    
+                    // Thêm trạng thái active cho thẻ vừa được click
+                    item.className = 'category-item cursor-pointer text-cyan-600 border-l-2 border-cyan-500 pl-4 py-3 font-bold bg-cyan-50 rounded-r-lg transition-all';
+                    
+                });
+            });
+        });
+    </script>
+</body>
+</html>
