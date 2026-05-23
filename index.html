@@ -216,7 +216,7 @@
                     <h3 id="sig-name" class="text-4xl lg:text-5xl font-extrabold text-cyan-600 mb-6 tracking-tight">Aqara G3</h3>
                     
                     <p id="sig-desc1" class="text-gray-600 text-base leading-relaxed mb-4 font-light">
-                        Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là "bộ脑" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.
+                        Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là "bộ não" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.
                     </p>
                     <p id="sig-desc2" class="text-gray-600 text-base leading-relaxed mb-8 font-light">
                         Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.
@@ -227,19 +227,19 @@
                     </a>
                 </div>
 
-                <!-- Cột Giữa: Hình ảnh sản phẩm & Điều hướng -->
-                <div class="w-full lg:w-1/3 flex flex-col items-center relative">
+                <!-- Cột Giữa: Hình ảnh sản phẩm (Không viền) & Điều hướng -->
+                <div class="w-full lg:w-1/3 flex flex-col items-center relative min-h-[400px] justify-center">
                     <!-- Hiệu ứng Glow phía sau sản phẩm -->
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-100 rounded-full blur-[60px] pointer-events-none z-0"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-100 rounded-full blur-[80px] pointer-events-none z-0 opacity-70"></div>
                     
-                    <!-- Hình ảnh sản phẩm (Thay thế Icon bằng thẻ IMG) -->
-                    <div class="relative z-10 w-full max-w-[300px] aspect-square bg-gray-50 rounded-3xl border border-gray-200 flex items-center justify-center p-4 shadow-xl mb-8 overflow-hidden group">
+                    <!-- Hình ảnh sản phẩm tràn viền -->
+                    <div class="relative z-10 w-full flex items-center justify-center p-4 mb-8 overflow-visible group">
                          <!-- Ảnh sản phẩm sẽ được thay đổi thông qua JS -->
-                         <img id="sig-image" src="aqara-g3.png" alt="Aqara Product" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                         <img id="sig-image" src="aqara-g3.png" alt="Aqara Product" class="w-full h-auto max-h-[350px] object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-500 origin-bottom">
                     </div>
 
                     <!-- Nút điều hướng Trái / Phải -->
-                    <div class="flex gap-4 relative z-20">
+                    <div class="flex gap-4 relative z-20 mt-auto">
                         <button id="btn-prev-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-500 hover:border-cyan-500 hover:text-cyan-600 hover:shadow-md transition-all flex items-center justify-center">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
