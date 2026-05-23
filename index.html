@@ -29,12 +29,15 @@
                             400: '#8AB4F8', 
                             500: '#5A92E6', // Đậm hơn một chút cho nút bấm
                             600: '#3B76D6', // Dành cho chữ trên nền trắng để dễ đọc
+                            700: '#2A5CBA',
                         }
                     },
                     boxShadow: {
                         'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
                         'neon': '0 0 15px rgba(90, 146, 230, 0.4)',
                         'neon-hover': '0 0 25px rgba(90, 146, 230, 0.6)',
+                        'card-float': '0 8px 30px rgba(0,0,0,0.06)',
+                        'card-float-hover': '0 12px 40px rgba(90,146,230,0.15)',
                     }
                 }
             }
@@ -200,9 +203,10 @@
     </section>
 
     <!-- Signature Product Section (Aqara Flagship Carousel) -->
-    <section id="signature-product" class="py-24 bg-white relative overflow-hidden border-b border-gray-200">
+    <!-- Đổi nền thành gradient rất nhẹ từ trắng sang xám nhạt để bật tone cho màu trắng của thẻ tính năng -->
+    <section id="signature-product" class="py-24 bg-gradient-to-b from-white to-gray-50/80 relative overflow-hidden border-b border-gray-200">
         <!-- Chữ mờ chạy nền (Watermark) -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.02]">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03]">
             <h2 id="sig-watermark" class="text-[150px] md:text-[250px] font-black text-gray-900 whitespace-nowrap tracking-tighter transition-opacity duration-500">AQARA G3</h2>
         </div>
 
@@ -215,42 +219,41 @@
                     <h3 id="sig-type" class="text-3xl lg:text-5xl font-extrabold text-gray-900 mb-2 tracking-tight">Camera Hub</h3>
                     <h3 id="sig-name" class="text-4xl lg:text-5xl font-extrabold text-cyan-600 mb-6 tracking-tight">Aqara G3</h3>
                     
-                    <p id="sig-desc1" class="text-gray-600 text-base leading-relaxed mb-4 font-light">
+                    <p id="sig-desc1" class="text-gray-700 font-medium text-[15px] leading-relaxed mb-4">
                         Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là "bộ não" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.
                     </p>
-                    <p id="sig-desc2" class="text-gray-600 text-base leading-relaxed mb-8 font-light">
+                    <p id="sig-desc2" class="text-gray-700 font-medium text-[15px] leading-relaxed mb-8">
                         Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.
                     </p>
                     
-                    <a href="#contact" class="inline-flex items-center gap-2 border-2 border-gray-200 text-gray-700 hover:border-cyan-500 hover:text-cyan-600 px-8 py-3 rounded-full transition-all duration-300 text-sm font-bold tracking-wide uppercase shadow-sm">
+                    <a href="#contact" class="inline-flex items-center gap-2 border-2 border-gray-200 text-gray-700 hover:border-cyan-500 hover:text-cyan-600 px-8 py-3 rounded-full transition-all duration-300 text-sm font-bold tracking-wide uppercase bg-white shadow-sm hover:shadow-md">
                         Tìm hiểu thêm <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>
 
                 <!-- Cột Giữa: Hình ảnh sản phẩm (Không viền, Căn giữa tuyệt đối) & Điều hướng -->
                 <div class="w-full lg:w-1/3 flex flex-col items-center justify-center relative min-h-[400px]">
-                    <!-- Hiệu ứng Glow phía sau sản phẩm -->
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-100 rounded-full blur-[80px] pointer-events-none z-0 opacity-70"></div>
+                    <!-- Hiệu ứng Glow phía sau sản phẩm (Mở rộng và làm sắc nét hơn) -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-cyan-400/20 rounded-full blur-[90px] pointer-events-none z-0"></div>
                     
-                    <!-- Hình ảnh sản phẩm tràn viền -->
+                    <!-- Hình ảnh sản phẩm tràn viền với Drop shadow đậm hơn giúp tách biệt rõ khỏi nền trắng -->
                     <div class="relative z-10 w-full flex-1 flex items-center justify-center p-4 overflow-visible group">
-                         <!-- Ảnh sản phẩm sẽ được thay đổi thông qua JS, max-h được tăng lên để vừa mọi loại tỉ lệ -->
-                         <img id="sig-image" src="aqara-g3.png" alt="Aqara Product" class="w-full h-auto max-h-[400px] object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                         <img id="sig-image" src="aqara-g3.png" alt="Aqara Product" class="w-full h-auto max-h-[400px] object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.18)] group-hover:scale-110 transition-transform duration-500">
                     </div>
 
                     <!-- Nút điều hướng Trái / Phải -->
                     <div class="flex gap-4 relative z-20 mt-8">
-                        <button id="btn-prev-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-500 hover:border-cyan-500 hover:text-cyan-600 hover:shadow-md transition-all flex items-center justify-center">
+                        <button id="btn-prev-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-cyan-500 hover:text-cyan-600 shadow-sm hover:shadow-md transition-all flex items-center justify-center">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
-                        <button id="btn-next-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-500 hover:border-cyan-500 hover:text-cyan-600 hover:shadow-md transition-all flex items-center justify-center">
+                        <button id="btn-next-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-cyan-500 hover:text-cyan-600 shadow-sm hover:shadow-md transition-all flex items-center justify-center">
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Cột Phải: Các tính năng nổi bật -->
-                <div id="sig-features" class="w-full lg:w-1/3 flex flex-col gap-4">
+                <div id="sig-features" class="w-full lg:w-1/3 flex flex-col gap-5">
                     <!-- Các card tính năng sẽ được JS chèn tự động vào đây -->
                 </div>
             </div>
@@ -615,13 +618,13 @@
                 sigImage.src = product.imageUrl;
                 sigImage.alt = product.name;
 
-                // Xây dựng các thẻ Features
+                // Xây dựng các thẻ Features (Được tinh chỉnh thành Floating Cards)
                 sigFeatures.innerHTML = '';
                 product.features.forEach(feature => {
                     const card = `
-                        <div class="bg-white border border-gray-100 border-l-4 border-l-cyan-500 rounded-r-xl p-5 hover:bg-gray-50 transition-colors duration-300 cursor-default shadow-sm">
-                            <h4 class="text-cyan-600 font-bold text-sm mb-1 uppercase tracking-wider">${feature.title}</h4>
-                            <p class="text-gray-500 text-xs leading-relaxed font-light">${feature.desc}</p>
+                        <div class="bg-white border border-gray-200 border-l-4 border-l-cyan-600 rounded-2xl p-6 transition-all duration-300 cursor-default shadow-card-float hover:shadow-card-float-hover hover:-translate-y-1">
+                            <h4 class="text-cyan-700 font-bold text-[15px] mb-2 uppercase tracking-wide">${feature.title}</h4>
+                            <p class="text-gray-600 text-[14px] leading-relaxed font-medium">${feature.desc}</p>
                         </div>
                     `;
                     sigFeatures.innerHTML += card;
@@ -650,7 +653,7 @@
                     sigWrapper.classList.remove('opacity-0');
                     sigWrapper.classList.add('opacity-100');
                     sigWatermark.classList.remove('opacity-0');
-                    sigWatermark.classList.add('opacity-[0.02]');
+                    sigWatermark.classList.add('opacity-[0.03]');
                 }, 300); // Đợi 300ms cho hiệu ứng mờ kết thúc rồi mới đổi
             }
 
