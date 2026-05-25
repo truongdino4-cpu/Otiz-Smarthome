@@ -203,7 +203,7 @@
                     <p class="text-gray-500 text-sm leading-relaxed font-light">Kết hợp điều khiển với các hãng máy lạnh lớn trên thế giới. Đồng bộ với điều hòa trung tâm VRV, điều chỉnh nhiệt độ và lọc khí chủ động.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1 flex flex-col items-center text-center">
-                    <div class="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-cyan-50 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(90,146,230,0.5)] group-hover:-rotate-6">
+                    <div class="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-cyan-50 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(90,146,230,0.5)] group-hover:rotate-6">
                         <i class="fa-solid fa-shield-halved text-2xl text-cyan-600 transition-colors"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">An ninh tổng thể</h3>
@@ -248,7 +248,7 @@
                 <div class="w-full lg:w-1/3 flex flex-col items-center justify-center relative min-h-[500px]">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-cyan-400/20 rounded-full blur-[90px] pointer-events-none z-0"></div>
                     <div class="relative z-10 w-full flex-1 flex items-center justify-center p-4 overflow-visible group">
-                         <img id="sig-image" src="aqara-g3.png" alt="Aqara Product" class="w-full h-auto max-h-[560px] object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.18)] group-hover:scale-105 transition-transform duration-500">
+                         <img id="sig-image" src="images/aqara-g3.png" alt="Aqara Product" class="w-full h-auto max-h-[560px] object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.18)] group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="flex gap-4 relative z-20 mt-8">
                         <button id="btn-prev-sig" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-cyan-500 hover:text-cyan-600 shadow-sm hover:shadow-md transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-left"></i></button>
@@ -300,13 +300,6 @@
                 
                 <!-- Lớp mờ (overlay) đen mỏng giúp nổi bật bảng điều khiển -->
                 <div class="absolute inset-0 bg-black/20"></div>
-
-                <!-- Overlay text khuyên dùng kích thước ảnh -->
-                <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center opacity-100 group-hover:opacity-0 transition-opacity duration-300 z-10 pointer-events-none">
-                    <i class="fa-regular fa-image text-5xl text-white/90 mb-4 drop-shadow-md"></i>
-                    <h4 class="text-white font-bold text-xl mb-2 drop-shadow-md">Vị trí chèn ảnh căn hộ</h4>
-                    <p class="text-white/90 text-sm drop-shadow-md">Kích thước khuyên dùng:<br><strong>1920 x 1080 pixel</strong> (Tỷ lệ 16:9)</p>
-                </div>
 
                 <!-- Bảng điều khiển tương tác mô phỏng (APP UI) -->
                 <!-- Làm mờ sau lưng 50% bằng bg-white/50 và backdrop-blur-xl -->
@@ -450,7 +443,8 @@
                     <p class="text-gray-600">Để lại thông tin, Otiz sẽ liên hệ tư vấn cấu hình phần cứng và thiết kế theo mặt bằng nhà anh chị.</p>
                 </div>
 
-                <form action="https://formspree.io/f/MAY_BE_YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
+                <!-- Thay đổi thành Form xử lý bằng Javascript -->
+                <form id="contact-form" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">Họ và Tên</label>
@@ -779,6 +773,42 @@
                 const p = projects[projIndex];
                 const isEven = projIndex % 2 === 0;
                 
+                // Viết tách riêng 2 Layout để sửa triệt để lỗi căn khung Grid
+                let gridHtml = '';
+                if (isEven) {
+                    gridHtml = `
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[450px]">
+                            <div class="md:col-span-2 h-[300px] md:h-full rounded-2xl overflow-hidden shadow-md">
+                                <img src="${p.images[0]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <div class="flex flex-col gap-4 h-[400px] md:h-full">
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
+                                    <img src="${p.images[1]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                </div>
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
+                                    <img src="${p.images[2]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    gridHtml = `
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[450px]">
+                            <div class="flex flex-col gap-4 h-[400px] md:h-full order-2 md:order-1">
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
+                                    <img src="${p.images[1]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                </div>
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
+                                    <img src="${p.images[2]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="md:col-span-2 h-[300px] md:h-full rounded-2xl overflow-hidden shadow-md order-1 md:order-2">
+                                <img src="${p.images[0]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            </div>
+                        </div>
+                    `;
+                }
+
                 projWrapper.innerHTML = `
                     <div class="project-item group">
                         <div class="mb-6 text-center md:text-left">
@@ -789,19 +819,7 @@
                                 <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-cyan-600"></i> Địa chỉ: ${p.location}</span>
                             </div>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[450px]">
-                            <div class="${isEven ? 'md:col-span-2 order-1' : 'md:col-span-2 order-1 md:order-2'} h-[300px] md:h-full rounded-2xl overflow-hidden shadow-md">
-                                <img src="${p.images[0]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                            </div>
-                            <div class="flex flex-col gap-4 h-[400px] md:h-full ${isEven ? 'order-2' : 'order-2 md:order-1'}">
-                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
-                                    <img src="${p.images[1]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                                </div>
-                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
-                                    <img src="${p.images[2]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                                </div>
-                            </div>
-                        </div>
+                        ${gridHtml}
                     </div>
                 `;
             }
@@ -821,6 +839,65 @@
                 document.getElementById('btn-prev-proj').addEventListener('click', () => changeProject('prev'));
                 document.getElementById('btn-next-proj-mb').addEventListener('click', () => changeProject('next'));
                 document.getElementById('btn-prev-proj-mb').addEventListener('click', () => changeProject('prev'));
+            }
+
+            // ==========================================
+            // 5. LOGIC GỬI FORM VỀ TELEGRAM (NEW)
+            // ==========================================
+            const contactForm = document.getElementById('contact-form');
+            if(contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Chặn tải lại trang
+                    const btn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = btn.innerText;
+                    btn.innerText = "ĐANG GỬI...";
+                    btn.disabled = true;
+
+                    // Lấy dữ liệu người dùng nhập
+                    const name = contactForm.name.value;
+                    const phone = contactForm.phone.value;
+                    const message = contactForm.message.value;
+
+                    // --- ANH OTIZ ĐIỀN THÔNG TIN TELEGRAM VÀO ĐÂY ---
+                    // Ví dụ Token: "123456789:ABCdefGhI_jkLmnop"
+                    const BOT_TOKEN = "8920731797:AAGu6eIVgnBSIcwM2G3CDomVyFN8sVWC-CI"; 
+                    // Ví dụ Chat ID: "987654321" (hoặc ID của nhóm chat)
+                    const CHAT_ID = "5898963732"; 
+                    // ------------------------------------------------
+
+                    if(BOT_TOKEN === "ĐIỀN_TOKEN_VÀO_ĐÂY") {
+                        alert("Hệ thống gửi tin nhắn chưa được cài đặt Telegram Bot Token. Cần điền Token vào code để hoạt động!");
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        return;
+                    }
+
+                    // Nội dung tin nhắn gửi qua Telegram
+                    const text = `🔥 CÓ KHÁCH HÀNG MỚI!\n\n👤 Tên: ${name}\n📞 SĐT: ${phone}\n💬 Nhu cầu: ${message}`;
+
+                    // Gọi API gửi tin nhắn của Telegram
+                    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if(data.ok) {
+                            alert("Cảm ơn anh/chị. Yêu cầu tư vấn đã được gửi thành công!");
+                            contactForm.reset(); // Xóa trắng form sau khi gửi
+                        } else {
+                            alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+                        }
+                    })
+                    .catch(error => {
+                        alert("Lỗi kết nối mạng, vui lòng kiểm tra lại.");
+                    })
+                    .finally(() => {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    });
+                });
             }
 
         });
