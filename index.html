@@ -778,15 +778,15 @@
                 if (isEven) {
                     gridHtml = `
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[450px]">
-                            <div class="md:col-span-2 h-[300px] md:h-full rounded-2xl overflow-hidden shadow-md">
-                                <img src="${p.images[0]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            <div class="md:col-span-2 h-[300px] md:h-full rounded-2xl overflow-hidden shadow-md relative">
+                                <img src="${p.images[0]}" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                             </div>
                             <div class="flex flex-col gap-4 h-[400px] md:h-full">
-                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
-                                    <img src="${p.images[1]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md relative min-h-0">
+                                    <img src="${p.images[1]}" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                                 </div>
-                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
-                                    <img src="${p.images[2]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md relative min-h-0">
+                                    <img src="${p.images[2]}" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                                 </div>
                             </div>
                         </div>
@@ -795,15 +795,15 @@
                     gridHtml = `
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[450px]">
                             <div class="flex flex-col gap-4 h-[400px] md:h-full order-2 md:order-1">
-                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
-                                    <img src="${p.images[1]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md relative min-h-0">
+                                    <img src="${p.images[1]}" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                                 </div>
-                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md">
-                                    <img src="${p.images[2]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                                <div class="flex-1 rounded-2xl overflow-hidden shadow-md relative min-h-0">
+                                    <img src="${p.images[2]}" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                                 </div>
                             </div>
-                            <div class="md:col-span-2 h-[300px] md:h-full rounded-2xl overflow-hidden shadow-md order-1 md:order-2">
-                                <img src="${p.images[0]}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            <div class="md:col-span-2 h-[300px] md:h-full rounded-2xl overflow-hidden shadow-md order-1 md:order-2 relative">
+                                <img src="${p.images[0]}" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                             </div>
                         </div>
                     `;
