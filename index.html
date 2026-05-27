@@ -120,11 +120,11 @@
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
         <a href="https://zalo.me/0363035960" target="_blank" class="w-14 h-14 bg-[#0068FF] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform hover:shadow-[#0068FF]/50 relative group">
             <strong class="font-sans text-[18px]">Zalo</strong>
-            <span class="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity pointer-events-none shadow-lg">Chat Zalo ngay</span>
+            <span class="lang-text absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity pointer-events-none shadow-lg" data-vi="Chat Zalo ngay" data-en="Chat on Zalo">Chat Zalo ngay</span>
         </a>
         <a href="tel:0363035960" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition-transform animate-pulse hover:animate-none hover:shadow-green-500/50 relative group">
             <i class="fa-solid fa-phone"></i>
-            <span class="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity pointer-events-none shadow-lg">Gọi 0363035960</span>
+            <span class="lang-text absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity pointer-events-none shadow-lg" data-vi="Gọi 0363035960" data-en="Call 0363035960">Gọi 0363035960</span>
         </a>
     </div>
 
@@ -137,17 +137,30 @@
             </a>
             
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#home" class="text-gray-900 hover:text-cyan-600 transition font-medium">Trang chủ</a>
-                <a href="#features" class="text-gray-600 hover:text-cyan-600 transition font-medium">Giải pháp</a>
-                <a href="#signature-product" class="text-gray-600 hover:text-cyan-600 transition font-medium">Sản phẩm</a>
-                <a href="#demo" class="text-gray-600 hover:text-cyan-600 transition font-medium">Trải nghiệm</a>
-                <a href="#projects" class="text-gray-600 hover:text-cyan-600 transition font-medium">Dự án</a>
-                <a href="#contact" class="text-gray-600 hover:text-cyan-600 transition font-medium">Liên hệ</a>
+                <a href="#home" class="lang-text text-gray-900 hover:text-cyan-600 transition font-medium" data-vi="Trang chủ" data-en="Home">Trang chủ</a>
+                <a href="#features" class="lang-text text-gray-600 hover:text-cyan-600 transition font-medium" data-vi="Giải pháp" data-en="Solutions">Giải pháp</a>
+                <a href="#signature-product" class="lang-text text-gray-600 hover:text-cyan-600 transition font-medium" data-vi="Sản phẩm" data-en="Products">Sản phẩm</a>
+                <a href="#demo" class="lang-text text-gray-600 hover:text-cyan-600 transition font-medium" data-vi="Trải nghiệm" data-en="Experience">Trải nghiệm</a>
+                <a href="#projects" class="lang-text text-gray-600 hover:text-cyan-600 transition font-medium" data-vi="Dự án" data-en="Projects">Dự án</a>
+                <a href="#contact" class="lang-text text-gray-600 hover:text-cyan-600 transition font-medium" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+                
+                <!-- Nút chuyển ngôn ngữ VI/EN -->
+                <div class="flex items-center bg-gray-100/80 backdrop-blur-sm rounded-full p-1 border border-gray-200 ml-2 shadow-inner">
+                    <button id="btn-lang-vi" class="px-3 py-1 rounded-full bg-white shadow-sm text-cyan-600 font-bold text-xs transition-all">VI</button>
+                    <button id="btn-lang-en" class="px-3 py-1 rounded-full text-gray-400 hover:text-gray-700 font-bold text-xs transition-all">EN</button>
+                </div>
             </div>
 
-            <button class="md:hidden text-2xl text-cyan-600">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="md:hidden flex items-center gap-4">
+                <!-- Nút chuyển ngôn ngữ Mobile -->
+                <div class="flex items-center bg-gray-100/80 rounded-full p-1 border border-gray-200">
+                    <button id="btn-lang-vi-mb" class="px-2 py-1 rounded-full bg-white shadow-sm text-cyan-600 font-bold text-[10px] transition-all">VI</button>
+                    <button id="btn-lang-en-mb" class="px-2 py-1 rounded-full text-gray-400 font-bold text-[10px] transition-all">EN</button>
+                </div>
+                <button class="text-2xl text-cyan-600">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -162,17 +175,17 @@
         </div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center mt-20">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight max-w-5xl uppercase tracking-tight drop-shadow-xl shadow-black">
+            <h1 class="lang-text text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight max-w-5xl uppercase tracking-tight drop-shadow-xl shadow-black" data-vi="NÂNG TẦM CUỘC SỐNG <span class='text-cyan-400 drop-shadow-md'>THÔNG MINH</span>" data-en="ELEVATE YOUR <span class='text-cyan-400 drop-shadow-md'>SMART LIFE</span>">
                 NÂNG TẦM CUỘC SỐNG <span class="text-cyan-400 drop-shadow-md">THÔNG MINH</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl font-light leading-relaxed drop-shadow-md shadow-black">
+            <p class="lang-text text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl font-light leading-relaxed drop-shadow-md shadow-black" data-vi="Giải pháp toàn diện cho ngôi nhà của bạn." data-en="Comprehensive solutions for your modern home.">
                 Giải pháp toàn diện cho ngôi nhà của bạn.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#demo" class="bg-cyan-500 text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(90,146,230,0.6)] flex items-center gap-2 border border-cyan-400">
+                <a href="#demo" class="lang-text bg-cyan-500 text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(90,146,230,0.6)] flex items-center justify-center gap-2 border border-cyan-400" data-vi="Khám Phá Giao Diện <i class='fa-solid fa-arrow-right'></i>" data-en="Explore Dashboard <i class='fa-solid fa-arrow-right'></i>">
                     Khám Phá Giao Diện <i class="fa-solid fa-arrow-right"></i>
                 </a>
-                <a href="#contact" class="border-2 border-white/70 text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-white/10 hover:border-white backdrop-blur-md transition-all">
+                <a href="#contact" class="lang-text border-2 border-white/70 text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-white/10 hover:border-white backdrop-blur-md transition-all flex items-center justify-center" data-vi="Nhận Tư Vấn Cấu Hình" data-en="Get a Consultation">
                     Nhận Tư Vấn Cấu Hình
                 </a>
             </div>
@@ -183,8 +196,8 @@
     <section id="features" class="py-24 bg-gray-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Hệ Sinh Thái <span class="text-cyan-600">Toàn Diện</span></h2>
-                <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed">Mọi thiết bị điện trong nhà đều được kết nối và quản lý thông qua một nền tảng duy nhất, tối ưu trải nghiệm cho từng kịch bản sống.</p>
+                <h2 class="lang-text text-4xl font-bold text-gray-900 mb-4 tracking-tight" data-vi="Hệ Sinh Thái <span class='text-cyan-600'>Toàn Diện</span>" data-en="Comprehensive <span class='text-cyan-600'>Ecosystem</span>">Hệ Sinh Thái <span class="text-cyan-600">Toàn Diện</span></h2>
+                <p class="lang-text text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed" data-vi="Mọi thiết bị điện trong nhà đều được kết nối và quản lý thông qua một nền tảng duy nhất, tối ưu trải nghiệm cho từng kịch bản sống." data-en="All electrical devices are connected and managed through a single platform, optimizing the experience for every living scenario.">Mọi thiết bị điện trong nhà đều được kết nối và quản lý thông qua một nền tảng duy nhất, tối ưu trải nghiệm cho từng kịch bản sống.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -192,34 +205,34 @@
                     <div class="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-cyan-50 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(90,146,230,0.5)] group-hover:rotate-6">
                         <i class="fa-regular fa-lightbulb text-2xl text-cyan-600 transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Chiếu sáng thông minh</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed font-light">Tự động hóa theo kịch bản, điều khiển độ sáng và nhiệt độ màu mượt mà. Chỉ số hoàn màu cao RA>96. Thiết kế chống chói sâu, choá đèn phù hợp với nhiều loại thiết kế.</p>
+                    <h3 class="lang-text text-xl font-bold text-gray-900 mb-3" data-vi="Chiếu sáng thông minh" data-en="Smart Lighting">Chiếu sáng thông minh</h3>
+                    <p class="lang-text text-gray-500 text-sm leading-relaxed font-light" data-vi="Tự động hóa theo kịch bản, điều khiển độ sáng và nhiệt độ màu mượt mà. Chỉ số hoàn màu cao RA>96. Thiết kế chống chói sâu, choá đèn phù hợp với nhiều loại thiết kế." data-en="Scenario-based automation, smooth brightness and color temperature control. High CRI RA>96. Deep anti-glare design suitable for various aesthetics.">Tự động hóa theo kịch bản, điều khiển độ sáng và nhiệt độ màu mượt mà. Chỉ số hoàn màu cao RA>96. Thiết kế chống chói sâu, choá đèn phù hợp với nhiều loại thiết kế.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1 flex flex-col items-center text-center">
                     <div class="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-cyan-50 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(90,146,230,0.5)] group-hover:rotate-6">
                         <i class="fa-solid fa-snowflake text-2xl text-cyan-600 transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Điều hòa & Không khí</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed font-light">Kết hợp điều khiển với các hãng máy lạnh lớn trên thế giới. Đồng bộ với điều hòa trung tâm VRV, điều chỉnh nhiệt độ và lọc khí chủ động.</p>
+                    <h3 class="lang-text text-xl font-bold text-gray-900 mb-3" data-vi="Điều hòa & Không khí" data-en="Climate Control">Điều hòa & Không khí</h3>
+                    <p class="lang-text text-gray-500 text-sm leading-relaxed font-light" data-vi="Kết hợp điều khiển với các hãng máy lạnh lớn trên thế giới. Đồng bộ với điều hòa trung tâm VRV, điều chỉnh nhiệt độ và lọc khí chủ động." data-en="Integrated control with global air conditioning brands. Sync with central VRV systems for proactive temperature and air purification.">Kết hợp điều khiển với các hãng máy lạnh lớn trên thế giới. Đồng bộ với điều hòa trung tâm VRV, điều chỉnh nhiệt độ và lọc khí chủ động.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1 flex flex-col items-center text-center">
-                    <div class="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-cyan-50 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(90,146,230,0.5)] group-hover:rotate-6">
+                    <div class="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-cyan-50 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(90,146,230,0.5)] group-hover:-rotate-6">
                         <i class="fa-solid fa-shield-halved text-2xl text-cyan-600 transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">An ninh tổng thể</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed font-light">Kiểm soát an toàn 24/7 với hệ thống camera AI, khóa cửa thông minh và báo động chống đột nhập đa vùng.</p>
+                    <h3 class="lang-text text-xl font-bold text-gray-900 mb-3" data-vi="An ninh tổng thể" data-en="Comprehensive Security">An ninh tổng thể</h3>
+                    <p class="lang-text text-gray-500 text-sm leading-relaxed font-light" data-vi="Kiểm soát an toàn 24/7 với hệ thống camera AI, khóa cửa thông minh và báo động chống đột nhập đa vùng." data-en="24/7 safety control with AI camera systems, smart door locks, and multi-zone intrusion alarms.">Kiểm soát an toàn 24/7 với hệ thống camera AI, khóa cửa thông minh và báo động chống đột nhập đa vùng.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-soft transition-all duration-300 group cursor-pointer hover:-translate-y-1 flex flex-col items-center text-center">
                     <div class="w-16 h-16 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-cyan-50 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(90,146,230,0.5)] group-hover:rotate-6">
                         <i class="fa-solid fa-person-shelter text-2xl text-cyan-600 transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Rèm cửa tự động</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed font-light">Hẹn giờ đóng mở theo ánh sáng tự nhiên, bảo vệ nội thất và tiết kiệm năng lượng hiệu quả.</p>
+                    <h3 class="lang-text text-xl font-bold text-gray-900 mb-3" data-vi="Rèm cửa tự động" data-en="Automated Curtains">Rèm cửa tự động</h3>
+                    <p class="lang-text text-gray-500 text-sm leading-relaxed font-light" data-vi="Hẹn giờ đóng mở theo ánh sáng tự nhiên, bảo vệ nội thất và tiết kiệm năng lượng hiệu quả." data-en="Schedule opening and closing based on natural light, protecting interiors and saving energy efficiently.">Hẹn giờ đóng mở theo ánh sáng tự nhiên, bảo vệ nội thất và tiết kiệm năng lượng hiệu quả.</p>
                 </div>
             </div>
             
             <div class="text-center">
-                <p class="text-gray-500 font-light italic">* Và các hệ thống mở rộng khác: Cổng/Cửa tự động, Âm thanh đa vùng, Phòng chiếu phim, Karaoke...</p>
+                <p class="lang-text text-gray-500 font-light italic" data-vi="* Và các hệ thống mở rộng khác: Cổng/Cửa tự động, Âm thanh đa vùng, Phòng chiếu phim, Karaoke..." data-en="* And other expandable systems: Automatic Gates/Doors, Multi-zone Audio, Home Cinema, Karaoke...">* Và các hệ thống mở rộng khác: Cổng/Cửa tự động, Âm thanh đa vùng, Phòng chiếu phim, Karaoke...</p>
             </div>
         </div>
     </section>
@@ -240,7 +253,7 @@
                         Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.
                     </p>
                     
-                    <a href="#contact" class="inline-flex items-center gap-2 border-2 border-gray-200 text-gray-700 hover:border-cyan-500 hover:text-cyan-600 px-8 py-3 rounded-full transition-all duration-300 text-sm font-bold tracking-wide uppercase bg-white shadow-sm hover:shadow-md">
+                    <a href="#contact" class="lang-text inline-flex items-center gap-2 border-2 border-gray-200 text-gray-700 hover:border-cyan-500 hover:text-cyan-600 px-8 py-3 rounded-full transition-all duration-300 text-sm font-bold tracking-wide uppercase bg-white shadow-sm hover:shadow-md" data-vi="Tìm hiểu thêm <i class='fa-solid fa-arrow-right-long'></i>" data-en="Learn More <i class='fa-solid fa-arrow-right-long'></i>">
                         Tìm hiểu thêm <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>
@@ -267,8 +280,8 @@
     <section id="aqara-products" class="py-24 bg-gray-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Khám Phá Hệ Sinh Thái <span class="text-cyan-600">Aqara</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">Hàng trăm thiết bị thông minh phân chia theo từng hạng mục, đáp ứng mọi nhu cầu tự động hóa.</p>
+                <h2 class="lang-text text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight" data-vi="Khám Phá Hệ Sinh Thái <span class='text-cyan-600'>Aqara</span>" data-en="Explore the <span class='text-cyan-600'>Aqara</span> Ecosystem">Khám Phá Hệ Sinh Thái <span class="text-cyan-600">Aqara</span></h2>
+                <p class="lang-text text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed" data-vi="Hàng trăm thiết bị thông minh phân chia theo từng hạng mục, đáp ứng mọi nhu cầu tự động hóa." data-en="Hundreds of smart devices categorized to meet all your automation needs.">Hàng trăm thiết bị thông minh phân chia theo từng hạng mục, đáp ứng mọi nhu cầu tự động hóa.</p>
             </div>
 
             <div class="flex flex-col lg:flex-row gap-12">
@@ -288,44 +301,38 @@
     <section id="demo" class="py-24 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 relative z-10">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Trải Nghiệm <span class="text-cyan-600">Điều Khiển Trực Quan</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Giao diện điều khiển ứng dụng chuẩn Apple Home. Hãy thử bật/tắt và kéo các thanh trượt bên dưới.</p>
+                <h2 class="lang-text text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-vi="Trải Nghiệm <span class='text-cyan-600'>Điều Khiển Trực Quan</span>" data-en="Intuitive <span class='text-cyan-600'>Control Experience</span>">Trải Nghiệm <span class="text-cyan-600">Điều Khiển Trực Quan</span></h2>
+                <p class="lang-text text-gray-500 max-w-2xl mx-auto text-lg" data-vi="Giao diện điều khiển ứng dụng chuẩn Apple Home. Hãy thử bật/tắt và kéo các thanh trượt bên dưới." data-en="Apple Home standard control interface. Try toggling and sliding the controls below.">Giao diện điều khiển ứng dụng chuẩn Apple Home. Hãy thử bật/tắt và kéo các thanh trượt bên dưới.</p>
             </div>
 
-            <!-- Khung chứa ảnh trải dài (Tràn viền trong container) -->
+            <!-- Khung chứa ảnh trải dài -->
             <div class="relative w-full rounded-[32px] overflow-hidden shadow-2xl min-h-[600px] md:min-h-[700px] flex items-center p-6 md:p-12 group">
                 
-                <!-- Ảnh nền Căn hộ. KÍCH THƯỚC KHUYÊN DÙNG: 1920x1080px -->
                 <img src="images/demo-can-ho.jpg" alt="Căn hộ Otiz" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1920x1080/e2e8f0/9ca3af?text=Anh+Cho+File+images/demo-can-ho.jpg+vao+day'" />
-                
-                <!-- Lớp mờ (overlay) đen mỏng giúp nổi bật bảng điều khiển -->
                 <div class="absolute inset-0 bg-black/20"></div>
 
-                <!-- Bảng điều khiển tương tác mô phỏng (APP UI) -->
-                <!-- Làm mờ sau lưng 50% bằng bg-white/50 và backdrop-blur-xl -->
+                <!-- Bảng điều khiển tương tác -->
                 <div class="w-full max-w-[450px] bg-white/50 backdrop-blur-xl p-6 md:p-8 rounded-[40px] shadow-app-panel relative z-20 border border-white/60 mx-auto lg:mx-0 lg:ml-auto transition-transform duration-300">
                     
-                    <!-- Tiêu đề Panel -->
                     <div class="flex justify-between items-end mb-8 pl-2">
                         <div>
                             <h3 class="text-3xl font-extrabold text-gray-900 tracking-tight">Otiz Smarthome</h3>
-                            <p class="text-sm font-medium text-gray-800 mt-1 drop-shadow-sm">Phòng Khách</p>
+                            <p class="lang-text text-sm font-medium text-gray-800 mt-1 drop-shadow-sm" data-vi="Phòng Khách" data-en="Living Room">Phòng Khách</p>
                         </div>
                         <div class="text-right">
                             <p class="text-xl font-bold text-aqara-blue drop-shadow-sm" id="panel-temp-status">24°C</p>
                         </div>
                     </div>
 
-                    <!-- CARD 1: ĐÈN (Lighting) -->
+                    <!-- CARD 1: ĐÈN -->
                     <div class="bg-white/90 backdrop-blur-sm rounded-[28px] p-6 mb-5 shadow-sm transition-all duration-300 border border-white/80">
-                        <!-- Card Header -->
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center gap-4">
                                 <div class="w-[50px] h-[50px] flex items-center justify-center bg-orange-50 rounded-[18px]">
                                     <i class="fa-solid fa-lightbulb text-2xl text-orange-400"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-[17px] font-bold text-gray-900">Đèn phòng khách</h4>
+                                    <h4 class="lang-text text-[17px] font-bold text-gray-900" data-vi="Đèn phòng khách" data-en="Main Light">Đèn phòng khách</h4>
                                     <p class="text-[13px] font-medium text-gray-500 mt-0.5" id="light-status">Đang tắt | Living Room</p>
                                 </div>
                             </div>
@@ -333,52 +340,47 @@
                                 <i class="fa-solid fa-power-off"></i>
                             </button>
                         </div>
-                        <!-- Brightness Slider -->
                         <div class="mb-4 transition-opacity duration-300 opacity-50 pointer-events-none" id="light-bright-wrap">
                             <input type="range" min="0" max="100" value="83" class="apple-slider" id="light-bright">
                         </div>
-                        <!-- Color Temp Slider -->
                         <div class="transition-opacity duration-300 opacity-50 pointer-events-none" id="light-temp-wrap">
                             <input type="range" min="0" max="100" value="50" class="apple-slider" id="light-temp">
                         </div>
                     </div>
 
-                    <!-- CARD 2: RÈM (Curtains) -->
+                    <!-- CARD 2: RÈM -->
                     <div class="bg-white/90 backdrop-blur-sm rounded-[28px] p-6 mb-5 shadow-sm border border-white/80">
-                        <!-- Card Header -->
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center gap-4">
                                 <div class="w-[50px] h-[50px] flex items-center justify-center bg-blue-50 rounded-[18px]">
                                     <i class="fa-solid fa-person-shelter text-2xl text-blue-400"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-[17px] font-bold text-gray-900">Rèm vải</h4>
+                                    <h4 class="lang-text text-[17px] font-bold text-gray-900" data-vi="Rèm vải" data-en="Curtains">Rèm vải</h4>
                                     <p class="text-[13px] font-medium text-gray-500 mt-0.5" id="curtain-status">0% | Living Room</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Curtain Slider -->
                         <div class="mb-6">
                             <input type="range" min="0" max="100" value="0" class="apple-slider" id="curtain-slider">
                         </div>
-                        <!-- Curtain Buttons -->
                         <div class="flex justify-around gap-4 px-2">
                             <div class="flex flex-col items-center gap-2">
                                 <button class="app-ctrl-btn" id="curtain-open"><i class="fa-solid fa-chevron-left"></i> <i class="fa-solid fa-chevron-right ml-[-6px]"></i></button>
-                                <span class="text-[12px] font-medium text-gray-600">Open</span>
+                                <span class="lang-text text-[12px] font-medium text-gray-600" data-vi="Mở" data-en="Open">Mở</span>
                             </div>
                             <div class="flex flex-col items-center gap-2">
                                 <button class="app-ctrl-btn" id="curtain-stop"><i class="fa-solid fa-pause"></i></button>
-                                <span class="text-[12px] font-medium text-gray-600">Stop</span>
+                                <span class="lang-text text-[12px] font-medium text-gray-600" data-vi="Dừng" data-en="Stop">Dừng</span>
                             </div>
                             <div class="flex flex-col items-center gap-2">
                                 <button class="app-ctrl-btn" id="curtain-close"><i class="fa-solid fa-chevron-right"></i> <i class="fa-solid fa-chevron-left ml-[-6px]"></i></button>
-                                <span class="text-[12px] font-medium text-gray-600">Close</span>
+                                <span class="lang-text text-[12px] font-medium text-gray-600" data-vi="Đóng" data-en="Close">Đóng</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CARD 3: MÁY LẠNH (AC) -->
+                    <!-- CARD 3: MÁY LẠNH -->
                     <div class="bg-white/90 backdrop-blur-sm rounded-[28px] p-6 shadow-sm border border-white/80 transition-all duration-300" id="ac-card">
                         <div class="flex justify-between items-center mb-6">
                             <div class="flex items-center gap-4">
@@ -386,7 +388,7 @@
                                     <i class="fa-solid fa-snowflake text-2xl text-cyan-400"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-[17px] font-bold text-gray-900">Máy lạnh</h4>
+                                    <h4 class="lang-text text-[17px] font-bold text-gray-900" data-vi="Máy lạnh" data-en="Air Conditioner">Máy lạnh</h4>
                                     <p class="text-[13px] font-medium text-gray-500 mt-0.5" id="ac-status">Đang tắt | Living Room</p>
                                 </div>
                             </div>
@@ -394,7 +396,6 @@
                                 <i class="fa-solid fa-power-off"></i>
                             </button>
                         </div>
-                        <!-- AC Controls -->
                         <div class="flex justify-between items-center bg-gray-50/80 rounded-[20px] p-2 transition-opacity duration-300 opacity-50 pointer-events-none" id="ac-controls-wrap">
                             <button id="ac-down" class="w-[54px] h-[54px] bg-white rounded-2xl shadow-sm text-aqara-blue font-bold text-2xl flex items-center justify-center hover:bg-gray-100 transition-colors">-</button>
                             <span id="ac-temp-display" class="text-[32px] font-extrabold text-gray-800 tracking-tight">24°</span>
@@ -411,22 +412,20 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex justify-between items-end mb-12">
                 <div class="text-left">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Công Trình <span class="text-cyan-600">Thực Tế</span></h2>
-                    <p class="text-gray-500 max-w-2xl text-lg">Khám phá các không gian sống thông minh đẳng cấp do Otiz Smarthome thiết kế và thi công trọn gói.</p>
+                    <h2 class="lang-text text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-vi="Công Trình <span class='text-cyan-600'>Thực Tế</span>" data-en="Our <span class='text-cyan-600'>Projects</span>">Công Trình <span class="text-cyan-600">Thực Tế</span></h2>
+                    <p class="lang-text text-gray-500 max-w-2xl text-lg" data-vi="Khám phá các không gian sống thông minh đẳng cấp do Otiz Smarthome thiết kế và thi công trọn gói." data-en="Discover high-class smart living spaces designed and fully installed by Otiz Smarthome.">Khám phá các không gian sống thông minh đẳng cấp do Otiz Smarthome thiết kế và thi công trọn gói.</p>
                 </div>
-                <!-- Nút điều hướng Carousel cho Dự án -->
+                <!-- Nút điều hướng Carousel -->
                 <div class="hidden md:flex gap-4">
                     <button id="btn-prev-proj" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-cyan-500 hover:text-cyan-600 shadow-sm hover:shadow-md transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-left"></i></button>
                     <button id="btn-next-proj" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-cyan-500 hover:text-cyan-600 shadow-sm hover:shadow-md transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 
-            <!-- Wrapper Slider -->
             <div id="project-wrapper" class="transition-opacity duration-500 opacity-100">
-                <!-- Nội dung dự án sẽ được Render bằng JS ở đây -->
+                <!-- JS Render -->
             </div>
             
-            <!-- Điều hướng hiển thị trên Mobile -->
             <div class="flex md:hidden gap-4 mt-8 justify-center">
                 <button id="btn-prev-proj-mb" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-cyan-500 hover:text-cyan-600 shadow-sm hover:shadow-md transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-left"></i></button>
                 <button id="btn-next-proj-mb" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-cyan-500 hover:text-cyan-600 shadow-sm hover:shadow-md transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
@@ -439,27 +438,26 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Bắt Đầu <span class="text-cyan-600">Dự Án Của Bạn</span></h2>
-                    <p class="text-gray-600">Để lại thông tin, Otiz sẽ liên hệ tư vấn cấu hình phần cứng và thiết kế theo mặt bằng nhà anh chị.</p>
+                    <h2 class="lang-text text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-vi="Bắt Đầu <span class='text-cyan-600'>Dự Án Của Bạn</span>" data-en="Start <span class='text-cyan-600'>Your Project</span>">Bắt Đầu <span class="text-cyan-600">Dự Án Của Bạn</span></h2>
+                    <p class="lang-text text-gray-600" data-vi="Để lại thông tin, Otiz sẽ liên hệ tư vấn cấu hình phần cứng và thiết kế theo mặt bằng nhà anh chị." data-en="Leave your information, Otiz will contact you to advise on hardware configuration and design based on your floor plan.">Để lại thông tin, Otiz sẽ liên hệ tư vấn cấu hình phần cứng và thiết kế theo mặt bằng nhà anh chị.</p>
                 </div>
 
-                <!-- Thay đổi thành Form xử lý bằng Javascript -->
                 <form id="contact-form" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Họ và Tên</label>
+                            <label class="lang-text block text-sm font-semibold text-gray-700 mb-2" data-vi="Họ và Tên" data-en="Full Name">Họ và Tên</label>
                             <input type="text" name="name" required class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Số điện thoại</label>
+                            <label class="lang-text block text-sm font-semibold text-gray-700 mb-2" data-vi="Số điện thoại" data-en="Phone Number">Số điện thoại</label>
                             <input type="tel" name="phone" required class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nhu cầu dự kiến</label>
-                        <textarea name="message" rows="4" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" placeholder="Ví dụ: Căn hộ 3 phòng ngủ, muốn làm đèn thông minh..."></textarea>
+                        <label class="lang-text block text-sm font-semibold text-gray-700 mb-2" data-vi="Nhu cầu dự kiến" data-en="Your Requirements">Nhu cầu dự kiến</label>
+                        <textarea name="message" rows="4" class="lang-placeholder w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all" data-placeholder-vi="Ví dụ: Căn hộ 3 phòng ngủ, muốn làm đèn thông minh..." data-placeholder-en="E.g: 3-bedroom apartment, looking for smart lighting..." placeholder="Ví dụ: Căn hộ 3 phòng ngủ, muốn làm đèn thông minh..."></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-cyan-500 text-white font-bold text-lg py-4 rounded-lg hover:bg-cyan-600 transition-all shadow-md">GỬI YÊU CẦU TƯ VẤN</button>
+                    <button type="submit" class="lang-text w-full bg-cyan-500 text-white font-bold text-lg py-4 rounded-lg hover:bg-cyan-600 transition-all shadow-md" data-vi="GỬI YÊU CẦU TƯ VẤN" data-en="SUBMIT CONSULTATION REQUEST">GỬI YÊU CẦU TƯ VẤN</button>
                 </form>
             </div>
         </div>
@@ -498,7 +496,7 @@
                 <div class="flex justify-center md:justify-end space-x-6">
                     <a href="#" class="text-gray-400 hover:text-cyan-600 transition"><i class="fa-brands fa-facebook text-2xl"></i></a>
                     <a href="#" class="text-gray-400 hover:text-cyan-600 transition"><i class="fa-brands fa-github text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-cyan-600 transition"><i class="fa-brands fa-youtube text-2xl"></i></a>
+                    <a href="#" class="text-brands fa-youtube text-2xl"></i></a>
                 </div>
             </div>
         </div>
@@ -506,38 +504,86 @@
 
     <!-- Lightbox (Modal xem ảnh phóng to toàn màn hình) -->
     <div id="global-lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-md">
-        <!-- Nút X góc phải -->
         <button id="close-lightbox" class="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white text-4xl transition-colors z-[110] p-4 cursor-pointer">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        
-        <!-- Tên sản phẩm hiển thị khi phóng to -->
         <h3 id="lightbox-title" class="text-cyan-400 text-2xl md:text-3xl font-extrabold tracking-wide mb-6 z-[110] drop-shadow-md hidden"></h3>
-        
-        <!-- Khung chứa ảnh -->
         <div class="relative w-full max-w-6xl h-[70vh] flex items-center justify-center px-4">
             <img id="lightbox-img" src="" alt="Enlarged" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl transition-transform duration-300 transform scale-95" />
         </div>
-        
-        <!-- Gợi ý tương tác (Chỉ hiện cho sản phẩm) -->
-        <p id="lightbox-hint" class="text-gray-400 text-sm mt-6 hidden z-[110]"><i class="fa-solid fa-arrow-pointer mr-2"></i>Di chuột ra ngoài ảnh để thu nhỏ</p>
+        <p id="lightbox-hint" class="lang-text text-gray-400 text-sm mt-6 hidden z-[110]" data-vi="<i class='fa-solid fa-arrow-pointer mr-2'></i>Di chuột ra ngoài ảnh để thu nhỏ" data-en="<i class='fa-solid fa-arrow-pointer mr-2'></i>Move mouse out of the image to close"><i class="fa-solid fa-arrow-pointer mr-2"></i>Di chuột ra ngoài ảnh để thu nhỏ</p>
     </div>
 
     <!-- Scripts Khổng Lồ Điều Khiển UI -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            // ==========================================
+            // 0. LOGIC ĐA NGÔN NGỮ (I18N)
+            // ==========================================
+            let currentLang = 'vi';
+            
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            const btnViMb = document.getElementById('btn-lang-vi-mb');
+            const btnEnMb = document.getElementById('btn-lang-en-mb');
+
+            function setLanguage(lang) {
+                currentLang = lang;
+                
+                // Active/Inactive styles for UI toggle buttons
+                const activeClasses = "px-3 py-1 rounded-full bg-white shadow-sm text-cyan-600 font-bold text-xs transition-all";
+                const inactiveClasses = "px-3 py-1 rounded-full text-gray-400 hover:text-gray-700 font-bold text-xs transition-all";
+                const activeMbClasses = "px-2 py-1 rounded-full bg-white shadow-sm text-cyan-600 font-bold text-[10px] transition-all";
+                const inactiveMbClasses = "px-2 py-1 rounded-full text-gray-400 font-bold text-[10px] transition-all";
+
+                if (lang === 'vi') {
+                    btnVi.className = activeClasses; btnEn.className = inactiveClasses;
+                    btnViMb.className = activeMbClasses; btnEnMb.className = inactiveMbClasses;
+                } else {
+                    btnEn.className = activeClasses; btnVi.className = inactiveClasses;
+                    btnEnMb.className = activeMbClasses; btnViMb.className = inactiveMbClasses;
+                }
+
+                // Cập nhật các văn bản tĩnh trên HTML
+                document.querySelectorAll('.lang-text').forEach(el => {
+                    if (el.hasAttribute(`data-${lang}`)) {
+                        el.innerHTML = el.getAttribute(`data-${lang}`);
+                    }
+                });
+
+                document.querySelectorAll('.lang-placeholder').forEach(el => {
+                    if (el.hasAttribute(`data-placeholder-${lang}`)) {
+                        el.placeholder = el.getAttribute(`data-placeholder-${lang}`);
+                    }
+                });
+
+                // Render lại các component JS để đổi ngôn ngữ bên trong JS
+                renderSig();
+                renderCategoryList();
+                
+                // Render lại sản phẩm đang chọn
+                const activeCat = document.querySelector('.category-item.text-cyan-600');
+                if(activeCat) renderProductsGrid(activeCat.getAttribute('data-id'));
+                
+                renderProject();
+                updateAppDemoUI();
+            }
+
+            // Gắn sự kiện click
+            [btnVi, btnViMb].forEach(btn => btn?.addEventListener('click', () => setLanguage('vi')));
+            [btnEn, btnEnMb].forEach(btn => btn?.addEventListener('click', () => setLanguage('en')));
+
             
             // ==========================================
             // 1. LOGIC UI ĐIỀU KHIỂN (APP DASHBOARD)
             // ==========================================
             
-            // Hàm Helper để set màu dải gradient cho Slider
             const setSliderBackground = (slider, color, bg = '#E5E7EB') => {
                 const val = slider.value;
                 slider.style.background = `linear-gradient(to right, ${color} ${val}%, ${bg} ${val}%)`;
             };
 
-            // --- A. ĐÈN PHÒNG KHÁCH ---
             const lightPower = document.getElementById('light-power');
             const lightStatus = document.getElementById('light-status');
             const lightBrightWrap = document.getElementById('light-bright-wrap');
@@ -547,9 +593,25 @@
 
             let isLightOn = false;
 
-            // Khởi tạo màu slider
             setSliderBackground(lightBright, '#4361EE');
             setSliderBackground(lightTemp, '#F4D03F');
+
+            function updateAppDemoUI() {
+                // Cập nhật trạng thái đèn theo ngôn ngữ
+                if (isLightOn) {
+                    lightStatus.textContent = `${lightBright.value}% | Living Room`;
+                } else {
+                    lightStatus.textContent = currentLang === 'vi' ? 'Đang tắt | Living Room' : 'Off | Living Room';
+                }
+                
+                // Cập nhật trạng thái máy lạnh theo ngôn ngữ
+                if (isAcOn) {
+                    const statusStr = currentLang === 'vi' ? 'Làm lạnh' : 'Cooling';
+                    acStatus.textContent = `${statusStr}, ${currentTemp}°C | Living Room`;
+                } else {
+                    acStatus.textContent = currentLang === 'vi' ? 'Đang tắt | Living Room' : 'Off | Living Room';
+                }
+            }
 
             lightPower.addEventListener('click', () => {
                 isLightOn = !isLightOn;
@@ -557,56 +619,46 @@
                     lightPower.classList.replace('inactive', 'active');
                     lightBrightWrap.classList.remove('opacity-50', 'pointer-events-none');
                     lightTempWrap.classList.remove('opacity-50', 'pointer-events-none');
-                    lightStatus.textContent = `${lightBright.value}% | Living Room`;
                     lightStatus.classList.replace('text-gray-500', 'text-cyan-600');
                 } else {
                     lightPower.classList.replace('active', 'inactive');
                     lightBrightWrap.classList.add('opacity-50', 'pointer-events-none');
                     lightTempWrap.classList.add('opacity-50', 'pointer-events-none');
-                    lightStatus.textContent = `Đang tắt | Living Room`;
                     lightStatus.classList.replace('text-cyan-600', 'text-gray-500');
                 }
+                updateAppDemoUI();
             });
 
             lightBright.addEventListener('input', (e) => {
                 setSliderBackground(e.target, '#4361EE');
                 if(isLightOn) lightStatus.textContent = `${e.target.value}% | Living Room`;
             });
+            lightTemp.addEventListener('input', (e) => setSliderBackground(e.target, '#F4D03F'));
 
-            lightTemp.addEventListener('input', (e) => {
-                setSliderBackground(e.target, '#F4D03F');
-            });
-
-
-            // --- B. RÈM CỬA ---
+            // --- RÈM CỬA ---
             const curtainSlider = document.getElementById('curtain-slider');
             const curtainStatus = document.getElementById('curtain-status');
             
-            // Khởi tạo màu slider
             setSliderBackground(curtainSlider, '#4361EE');
-            
             curtainSlider.addEventListener('input', (e) => {
                 setSliderBackground(e.target, '#4361EE');
                 curtainStatus.textContent = `${e.target.value}% | Living Room`;
             });
 
-            // Nút ấn Rèm (chỉ làm hiệu ứng UI giả lập)
             ['curtain-open', 'curtain-stop', 'curtain-close'].forEach(id => {
                 document.getElementById(id).addEventListener('click', () => {
-                    if(id === 'curtain-open') { curtainSlider.value = 100; }
-                    if(id === 'curtain-close') { curtainSlider.value = 0; }
-                    // Trigger input event to update background and text
+                    if(id === 'curtain-open') curtainSlider.value = 100;
+                    if(id === 'curtain-close') curtainSlider.value = 0;
                     curtainSlider.dispatchEvent(new Event('input'));
                 });
             });
 
-
-            // --- C. MÁY LẠNH ---
+            // --- MÁY LẠNH ---
             const acPower = document.getElementById('ac-power');
             const acStatus = document.getElementById('ac-status');
             const acControlsWrap = document.getElementById('ac-controls-wrap');
             const acTempDisplay = document.getElementById('ac-temp-display');
-            const panelTempStatus = document.getElementById('panel-temp-status'); // Nhiệt độ chung góc trên phải
+            const panelTempStatus = document.getElementById('panel-temp-status');
             const acUp = document.getElementById('ac-up');
             const acDown = document.getElementById('ac-down');
 
@@ -618,14 +670,13 @@
                 if (isAcOn) {
                     acPower.classList.replace('inactive', 'active');
                     acControlsWrap.classList.remove('opacity-50', 'pointer-events-none');
-                    acStatus.textContent = `Làm lạnh, ${currentTemp}°C | Living Room`;
                     acStatus.classList.replace('text-gray-500', 'text-cyan-600');
                 } else {
                     acPower.classList.replace('active', 'inactive');
                     acControlsWrap.classList.add('opacity-50', 'pointer-events-none');
-                    acStatus.textContent = `Đang tắt | Living Room`;
                     acStatus.classList.replace('text-cyan-600', 'text-gray-500');
                 }
+                updateAppDemoUI();
             });
 
             const updateTemp = (newTemp) => {
@@ -633,7 +684,7 @@
                     currentTemp = newTemp;
                     acTempDisplay.textContent = `${currentTemp}°`;
                     panelTempStatus.textContent = `${currentTemp}°C`;
-                    if(isAcOn) acStatus.textContent = `Làm lạnh, ${currentTemp}°C | Living Room`;
+                    updateAppDemoUI();
                 }
             };
 
@@ -642,67 +693,200 @@
 
 
             // ==========================================
-            // 2. LOGIC DANH MỤC AQARA (RENDER ĐỘNG)
+            // 2. LOGIC DANH MỤC AQARA (SONG NGỮ)
             // ==========================================
+            // Ở đây em thiết lập cả tên tiếng Việt và tiếng Anh (vi/en).
             const aqaraData = [
-                { id: 'hub', name: 'Hub', products: ['Hub M1S', 'Hub M200', 'Hub M3', 'Hub S1plus', 'Hub G5 Pro (POE/Wifi)', 'Hub G3', 'Hub G350', 'Hub M100'] },
-                { id: 'switch', name: 'Switch & Plug', products: ['D1', 'H1', 'Z1 Pro', 'V1', 'S100', 'H2 US', 'H2 EU', 'Touchscreen Dial V1', 'Touchscreen S100 US', 'H1 20A', 'Plug EU', 'Plug US', 'Wall Outlet H2 EU', 'Relay T1', 'Relay t2'] },
-                { id: 'lighting', name: 'Lighting', products: ['Ceiling T1M', 'Spotlight T2 Pro', 'Downlight T2 Pro', 'Led Strip T1', 'Suface T1', 'Track/rail H1 Pro', 'Track/rail V1', 'Dimmer H2 US', 'Dimmer T1 Pro', 'Light Strip Driver', 'Dimmer H2 EU'] },
-                { id: 'sensor', name: 'Sensor', products: ['Motion P1', 'Multi FP300', 'Presence FP1E', 'Presence FP2', 'Door & Window T1', 'Door and Window P2', 'Multi P100', 'Climate W100', 'Temperature & Humidity T1', 'Water Leak T1', 'Smoke Detector', 'Natural Gas Detector', 'Vibration T1'] },
-                { id: 'lock', name: 'Smart Door Lock', products: ['A100', 'D100', 'D200i', 'B50', 'U100', 'U200', 'U50', 'U300'] },
-                { id: 'camera', name: 'Security Camera', products: ['E1', 'G100', 'G3', 'G2H Pro', 'G350', 'G5 Poe/wifi', 'G400', 'G410'] },
-                { id: 'curtain', name: 'Curtain control', products: ['Roller Shade', 'Curtain controller', 'Driver E1', 'Curtain controller C3', 'Roller Shade Driver E1'] },
-                { id: 'remote', name: 'Remote Control', products: ['Cube T1 Pro', 'Voice Mate h1', 'Mini Switch t1', 'Wireless remote switch'] },
-                { id: 'hvac', name: 'HVAC', products: ['Thermostat W400 FCU/VRF', 'VRF Contrroller T1'] },
-                { id: 'appliance', name: 'Domestic Appliances', products: ['Bathroom Heater T1', 'Clothes Drying Rack H1', 'Drying Rack C100', 'Smart Pet Feeder C1'] },
-                { id: 'other', name: 'Other', products: ['Valve Controller T1'] }
+                { 
+                    id: 'hub', 
+                    name: { vi: 'Bộ Trung Tâm', en: 'Hub' }, 
+                    products: [
+                        { vi: 'Hub M1S', en: 'Hub M1S' },
+                        { vi: 'Hub M200', en: 'Hub M200' },
+                        { vi: 'Hub M3', en: 'Hub M3' },
+                        { vi: 'Hub S1plus', en: 'Hub S1plus' },
+                        { vi: 'Hub G5 Pro', en: 'Hub G5 Pro' },
+                        { vi: 'Hub G3', en: 'Hub G3' },
+                        { vi: 'Hub G350', en: 'Hub G350' },
+                        { vi: 'Hub M100', en: 'Hub M100' }
+                    ] 
+                },
+                { 
+                    id: 'switch', 
+                    name: { vi: 'Công Tắc & Ổ Cắm', en: 'Switch & Plug' }, 
+                    products: [
+                        { vi: 'Công Tắc D1', en: 'D1 Switch' },
+                        { vi: 'Công Tắc H1', en: 'H1 Switch' },
+                        { vi: 'Công Tắc Z1 Pro', en: 'Z1 Pro Switch' },
+                        { vi: 'Công Tắc V1', en: 'V1 Switch' },
+                        { vi: 'Công Tắc S100', en: 'S100 Switch' },
+                        { vi: 'Công Tắc H2 US', en: 'H2 US Switch' },
+                        { vi: 'Công Tắc H2 EU', en: 'H2 EU Switch' },
+                        { vi: 'Màn Hình V1', en: 'Touchscreen Dial V1' },
+                        { vi: 'Màn Hình S100 US', en: 'Touchscreen S100 US' },
+                        { vi: 'Công Tắc H1 20A', en: 'H1 20A Switch' },
+                        { vi: 'Ổ Cắm EU', en: 'EU Plug' },
+                        { vi: 'Ổ Cắm US', en: 'US Plug' },
+                        { vi: 'Ổ Cắm Tường H2 EU', en: 'Wall Outlet H2 EU' },
+                        { vi: 'Relay T1', en: 'Relay T1' },
+                        { vi: 'Relay T2', en: 'Relay T2' }
+                    ] 
+                },
+                { 
+                    id: 'lighting', 
+                    name: { vi: 'Chiếu Sáng', en: 'Lighting' }, 
+                    products: [
+                        { vi: 'Đèn Ốp Trần T1M', en: 'Ceiling T1M' },
+                        { vi: 'Đèn Rọi T2 Pro', en: 'Spotlight T2 Pro' },
+                        { vi: 'Đèn Âm Trần T2 Pro', en: 'Downlight T2 Pro' },
+                        { vi: 'Dây LED T1', en: 'Led Strip T1' },
+                        { vi: 'Đèn Bề Mặt T1', en: 'Surface T1' },
+                        { vi: 'Ray Từ H1 Pro', en: 'Track/rail H1 Pro' },
+                        { vi: 'Ray Từ V1', en: 'Track/rail V1' },
+                        { vi: 'Dimmer H2 US', en: 'Dimmer H2 US' },
+                        { vi: 'Dimmer T1 Pro', en: 'Dimmer T1 Pro' },
+                        { vi: 'Nguồn Đèn LED', en: 'Light Strip Driver' },
+                        { vi: 'Dimmer H2 EU', en: 'Dimmer H2 EU' }
+                    ] 
+                },
+                { 
+                    id: 'sensor', 
+                    name: { vi: 'Cảm Biến', en: 'Sensor' }, 
+                    products: [
+                        { vi: 'Chuyển Động P1', en: 'Motion P1' },
+                        { vi: 'Đa Năng FP300', en: 'Multi FP300' },
+                        { vi: 'Hiện Diện FP1E', en: 'Presence FP1E' },
+                        { vi: 'Hiện Diện FP2', en: 'Presence FP2' },
+                        { vi: 'Cửa T1', en: 'Door & Window T1' },
+                        { vi: 'Cửa P2', en: 'Door and Window P2' },
+                        { vi: 'Đa Năng P100', en: 'Multi P100' },
+                        { vi: 'Môi Trường W100', en: 'Climate W100' },
+                        { vi: 'Nhiệt Ẩm T1', en: 'Temperature & Humidity T1' },
+                        { vi: 'Rò Rỉ Nước T1', en: 'Water Leak T1' },
+                        { vi: 'Báo Khói', en: 'Smoke Detector' },
+                        { vi: 'Báo Khí Gas', en: 'Natural Gas Detector' },
+                        { vi: 'Rung T1', en: 'Vibration T1' }
+                    ] 
+                },
+                { 
+                    id: 'lock', 
+                    name: { vi: 'Khóa Cửa', en: 'Smart Door Lock' }, 
+                    products: [
+                        { vi: 'Khóa A100', en: 'Lock A100' },
+                        { vi: 'Khóa D100', en: 'Lock D100' },
+                        { vi: 'Khóa D200i', en: 'Lock D200i' },
+                        { vi: 'Khóa B50', en: 'Lock B50' },
+                        { vi: 'Khóa U100', en: 'Lock U100' },
+                        { vi: 'Khóa U200', en: 'Lock U200' },
+                        { vi: 'Khóa U50', en: 'Lock U50' },
+                        { vi: 'Khóa U300', en: 'Lock U300' }
+                    ] 
+                },
+                { 
+                    id: 'camera', 
+                    name: { vi: 'Camera An Ninh', en: 'Security Camera' }, 
+                    products: [
+                        { vi: 'Camera E1', en: 'Camera E1' },
+                        { vi: 'Camera G100', en: 'Camera G100' },
+                        { vi: 'Camera G3', en: 'Camera G3' },
+                        { vi: 'Camera G2H Pro', en: 'Camera G2H Pro' },
+                        { vi: 'Camera G350', en: 'Camera G350' },
+                        { vi: 'Camera G5', en: 'Camera G5 Poe/wifi' },
+                        { vi: 'Camera G400', en: 'Camera G400' },
+                        { vi: 'Camera G410', en: 'Camera G410' }
+                    ] 
+                },
+                { 
+                    id: 'curtain', 
+                    name: { vi: 'Động Cơ Rèm', en: 'Curtain Control' }, 
+                    products: [
+                        { vi: 'Động Cơ Rèm Cuốn', en: 'Roller Shade' },
+                        { vi: 'Động Cơ Rèm Vải', en: 'Curtain controller' },
+                        { vi: 'Kéo Rèm E1', en: 'Driver E1' },
+                        { vi: 'Động Cơ C3', en: 'Curtain controller C3' },
+                        { vi: 'Kéo Rèm Cuốn E1', en: 'Roller Shade Driver E1' }
+                    ] 
+                },
+                { 
+                    id: 'remote', 
+                    name: { vi: 'Điều Khiển', en: 'Remote Control' }, 
+                    products: [
+                        { vi: 'Khối Lập Phương T1', en: 'Cube T1 Pro' },
+                        { vi: 'Giọng Nói H1', en: 'Voice Mate H1' },
+                        { vi: 'Nút Bấm T1', en: 'Mini Switch T1' },
+                        { vi: 'Công Tắc Không Dây', en: 'Wireless remote switch' }
+                    ] 
+                },
+                { 
+                    id: 'hvac', 
+                    name: { vi: 'Hệ Thống Lạnh', en: 'HVAC' }, 
+                    products: [
+                        { vi: 'Điều Khiển W400', en: 'Thermostat W400' },
+                        { vi: 'Bộ Điều Khiển T1', en: 'VRF Controller T1' }
+                    ] 
+                },
+                { 
+                    id: 'appliance', 
+                    name: { vi: 'Gia Dụng', en: 'Domestic Appliances' }, 
+                    products: [
+                        { vi: 'Quạt Sưởi T1', en: 'Bathroom Heater T1' },
+                        { vi: 'Giàn Phơi H1', en: 'Clothes Drying Rack H1' },
+                        { vi: 'Giàn Phơi C100', en: 'Drying Rack C100' },
+                        { vi: 'Máy Cho Ăn C1', en: 'Smart Pet Feeder C1' }
+                    ] 
+                },
+                { 
+                    id: 'other', 
+                    name: { vi: 'Khác', en: 'Other' }, 
+                    products: [
+                        { vi: 'Điều Khiển Van T1', en: 'Valve Controller T1' }
+                    ] 
+                }
             ];
 
             const categoryList = document.getElementById('aqara-category-list');
             const productGrid = document.getElementById('aqara-product-grid');
 
-            // Render Danh mục bên trái
             function renderCategoryList() {
                 categoryList.innerHTML = aqaraData.map((cat, idx) => `
                     <li class="category-item cursor-pointer pl-4 py-3 rounded-r-lg transition-all ${idx === 0 ? 'text-cyan-600 border-l-2 border-cyan-500 font-bold bg-cyan-50' : 'text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 hover:bg-white font-medium'}" data-id="${cat.id}">
-                        ${cat.name}
+                        ${cat.name[currentLang]}
                     </li>
                 `).join('');
                 
-                // Gắn sự kiện Click cho Category
                 document.querySelectorAll('.category-item').forEach(item => {
                     item.addEventListener('click', (e) => {
-                        // Cập nhật giao diện thẻ
                         document.querySelectorAll('.category-item').forEach(el => {
                             el.className = 'category-item cursor-pointer text-gray-500 hover:text-cyan-600 border-l-2 border-transparent hover:border-cyan-300 pl-4 py-3 hover:bg-white rounded-r-lg transition-all font-medium';
                         });
                         e.target.className = 'category-item cursor-pointer text-cyan-600 border-l-2 border-cyan-500 pl-4 py-3 font-bold bg-cyan-50 rounded-r-lg transition-all';
                         
-                        // Render lại Sản phẩm
                         const catId = e.target.getAttribute('data-id');
                         renderProductsGrid(catId);
                     });
                 });
             }
 
-            // Render Lưới Sản phẩm bên phải
             function renderProductsGrid(categoryId) {
                 const categoryData = aqaraData.find(c => c.id === categoryId);
                 if(!categoryData) return;
 
-                // Hiệu ứng mờ dần nhẹ trước khi đổi data
                 productGrid.style.opacity = 0;
                 
                 setTimeout(() => {
-                    productGrid.innerHTML = categoryData.products.map(prod => {
-                        let fileNameSafe = prod.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-') + '.png';
+                    productGrid.innerHTML = categoryData.products.map(prodObj => {
+                        const prodName = prodObj[currentLang];
+                        // File ảnh sẽ luôn lấy theo tên gốc tiếng anh/chuẩn hoá để ko bị lỗi link khi đổi ngôn ngữ
+                        const baseNameForFile = prodObj['en'].toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
+                        const fileNameSafe = baseNameForFile + '.png';
+
                         return `
-                            <div class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-center justify-center text-center hover:border-cyan-400 hover:-translate-y-1 hover:shadow-soft transition-all duration-300 group aspect-square cursor-pointer" onclick="window.openLightbox('images/${fileNameSafe}', '${prod}', true)">
+                            <div class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-center justify-center text-center hover:border-cyan-400 hover:-translate-y-1 hover:shadow-soft transition-all duration-300 group aspect-square cursor-pointer" onclick="window.openLightbox('images/${fileNameSafe}', '${prodName}', true)">
                                 <div class="w-full h-24 mb-4 flex items-center justify-center bg-gray-50 rounded-xl group-hover:bg-cyan-50 transition-all p-2 relative overflow-hidden pointer-events-none">
-                                    <img src="images/${fileNameSafe}" alt="${prod}" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <img src="images/${fileNameSafe}" alt="${prodName}" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                     <div class="hidden absolute inset-0 items-center justify-center text-[10px] text-gray-400 font-mono tracking-tighter">Cần thêm ảnh<br>${fileNameSafe}</div>
                                 </div>
-                                <h4 class="text-gray-900 font-semibold text-[13px] leading-snug px-1 pointer-events-none">${prod}</h4>
+                                <h4 class="text-gray-900 font-semibold text-[13px] leading-snug px-1 pointer-events-none">${prodName}</h4>
                             </div>
                         `;
                     }).join('');
@@ -710,18 +894,79 @@
                 }, 200);
             }
 
-            renderCategoryList();
-            renderProductsGrid('hub'); // Mặc định load Hub
-
 
             // ==========================================
-            // 3. LOGIC SIGNATURE CAROUSEL (4 Sản phẩm nổi bật)
+            // 3. LOGIC SIGNATURE CAROUSEL (SONG NGỮ)
             // ==========================================
             const sigProducts = [
-                { type: "Camera Hub", name: "Aqara G3", desc1: "Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là \"bộ não\" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.", desc2: "Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.", image: "images/aqara-g3.png", features: [{title: "AI Nhận Diện Cử Chỉ", desc: "Nhận biết các cử chỉ tay để tự động chạy các kịch bản thông minh mà không cần chạm vào điện thoại."}, {title: "Hub Zigbee 3.0 Tích Hợp", desc: "Kết nối và điều khiển trực tiếp lên đến 128 thiết bị con của hệ sinh thái Aqara siêu ổn định."}, {title: "Độ Phân Giải 2K 1296p", desc: "Cảm biến độ phân giải cao mang lại chất lượng hình ảnh sắc nét ngay cả trong điều kiện thiếu sáng."}, {title: "Điều Khiển Hồng Ngoại (IR)", desc: "Liên kết trực tiếp với các hãng TV, máy lạnh lớn trên thế giới hoặc dễ dàng học lệnh điều khiển."}] },
-                { type: "Smart Panel", name: "Aqara S1 Plus", desc1: "Màn hình điều khiển trung tâm kích thước 6.9 inch, mang đến trải nghiệm tương tác trực quan và cực kỳ sang trọng cho không gian sống.", desc2: "Thay thế hàng loạt công tắc cơ truyền thống. Kiểm soát ánh sáng, rèm cửa, nhiệt độ và theo dõi trạng thái nhà ngay trên một giao diện duy nhất.", image: "images/aqara-s1plus.png", features: [{title: "Màn Hình 6.9 Inch", desc: "Kích thước siêu lớn hiển thị thông tin rõ ràng, giao diện được tối ưu cho thao tác chạm mượt mà."}, {title: "Cá Nhân Hóa Giao Diện", desc: "Hỗ trợ thay đổi theme, upload ảnh nền cá nhân và tùy biến layout các nút điều khiển theo thói quen."}, {title: "Tích Hợp 3 Lộ Đèn", desc: "Chứa sẵn 3 relay vật lý bên trong để điều khiển trực tiếp 3 lộ đèn mà không cần mua thêm module."}, {title: "Màn Hình Đa Chức Năng", desc: "Xem được camera, đàm thoại trực tiếp, cho phép mở khóa, mở cổng trực tiếp trên màn hình."}] },
-                { type: "Smart Switch", name: "Aqara Z1 Pro", desc1: "Định nghĩa lại tiêu chuẩn của công tắc thông minh với dải cảm ứng trượt (slider) độc quyền và ngôn ngữ thiết kế hoàn mỹ.", desc2: "Trải nghiệm dimming đèn hoặc mở rèm cửa cực kỳ mượt mà chỉ bằng thao tác vuốt dọc theo thân công tắc, kết hợp phản hồi rung Haptic chân thực.", image: "images/aqara-z1pro.png", features: [{title: "Slider Cảm Ứng", desc: "Dải trượt cảm ứng dùng để điều chỉnh độ sáng đèn, rèm cửa hoặc nhiệt độ màu (Tuning) siêu mượt."}, {title: "Phản Hồi Chạm Cơ Học", desc: "Chạm mở đèn tinh tế nhẹ nhàng, chính xác, không phát ra tiếng ồn. Cảm giác như phím đàn."}, {title: "Bố Trí Linh Hoạt", desc: "Kích thước vuông 86x86 phù hợp với hầu hết công trình hiện đại, bố trí lên đến 3 nút nhấn đèn và 1 nút nhấn ngữ cảnh cho phép tối ưu tự động hóa."}, {title: "Chuẩn Zigbee 3.0", desc: "Đảm bảo kết nối mạng lưới siêu nhanh, ổn định và tương thích chéo hoàn hảo với hệ thống Apple Home."}] },
-                { type: "Smart Downlight", name: "Aqara T2 Pro", desc1: "Giải pháp chiếu sáng kiến trúc đỉnh cao, mang lại ánh sáng chất lượng rực rỡ và thiết kế chống chói sâu tinh tế bảo vệ mắt.", desc2: "Mô phỏng hoàn hảo nhịp sinh học tự nhiên. Tự động thay đổi độ sáng và nhiệt độ màu theo chu kỳ mặt trời.", image: "images/aqara-t2pro.png", features: [{title: "Dimming 1/10000", desc: "Công nghệ làm mờ siêu mịn, không nhấp nháy, chuyển đổi trạng thái ánh sáng êm ái như ánh sáng tự nhiên."}, {title: "Chỉ Số Hoàn Màu RA>96", desc: "Phản ánh trung thực và rực rỡ màu sắc của đồ nội thất, tranh ảnh nghệ thuật trong không gian sống."}, {title: "Ánh Sáng Sinh Học", desc: "Đồng bộ dải nhiệt độ màu (2700K - 6000K) theo thời gian thực, hỗ trợ giấc ngủ và sự tập trung."}, {title: "Tản Nhiệt Cao Cấp", desc: "Thiết kế thân nhôm đúc nguyên khối tản nhiệt tuyệt vời giúp tăng tuổi thọ và độ ổn định của chip LED."}] }
+                { 
+                    type: "Camera Hub", name: "Aqara G3", image: "images/aqara-g3.png",
+                    desc1: { 
+                        vi: "Không chỉ là một chiếc camera giám sát an ninh cao cấp độ phân giải 2K, Aqara G3 còn là \"bộ não\" trung tâm điều khiển toàn bộ ngôi nhà thông minh của bạn.",
+                        en: "More than just a high-end 2K security camera, Aqara G3 is the central \"brain\" that controls your entire smart home."
+                    },
+                    desc2: {
+                        vi: "Tích hợp công nghệ nhận diện khuôn mặt và cử chỉ bằng AI đột phá, cho phép bạn kích hoạt các kịch bản sống chỉ bằng một cái vẫy tay.",
+                        en: "Integrated with groundbreaking AI facial and gesture recognition, allowing you to trigger living scenarios with just a wave of your hand."
+                    },
+                    features: [
+                        {title: {vi: "AI Nhận Diện Cử Chỉ", en: "AI Gesture Recognition"}, desc: {vi: "Nhận biết các cử chỉ tay để tự động chạy các kịch bản thông minh mà không cần chạm vào điện thoại.", en: "Recognizes hand gestures to automatically run smart scenarios without touching your phone."}}, 
+                        {title: {vi: "Hub Zigbee 3.0", en: "Built-in Zigbee 3.0 Hub"}, desc: {vi: "Kết nối và điều khiển trực tiếp lên đến 128 thiết bị con của hệ sinh thái Aqara siêu ổn định.", en: "Connects and controls up to 128 child devices of the ultra-stable Aqara ecosystem."}}, 
+                        {title: {vi: "Độ Phân Giải 2K", en: "2K 1296p Resolution"}, desc: {vi: "Cảm biến độ phân giải cao mang lại chất lượng hình ảnh sắc nét ngay cả trong điều kiện thiếu sáng.", en: "High-resolution sensor delivers sharp image quality even in low light conditions."}}, 
+                        {title: {vi: "Điều Khiển Hồng Ngoại", en: "IR Control"}, desc: {vi: "Liên kết trực tiếp với các hãng TV, máy lạnh lớn trên thế giới hoặc dễ dàng học lệnh điều khiển.", en: "Directly links with major TV and AC brands globally, or easily learns control commands."}}
+                    ] 
+                },
+                { 
+                    type: "Smart Panel", name: "Aqara S1 Plus", image: "images/aqara-s1plus.png",
+                    desc1: {
+                        vi: "Màn hình điều khiển trung tâm kích thước 6.9 inch, mang đến trải nghiệm tương tác trực quan và cực kỳ sang trọng cho không gian sống.",
+                        en: "A 6.9-inch central control panel bringing an intuitive and extremely luxurious interactive experience to your living space."
+                    },
+                    desc2: {
+                        vi: "Thay thế hàng loạt công tắc cơ truyền thống. Kiểm soát ánh sáng, rèm cửa, nhiệt độ và theo dõi trạng thái nhà ngay trên một giao diện duy nhất.",
+                        en: "Replaces traditional mechanical switches. Control lighting, curtains, temperature, and monitor home status all on a single interface."
+                    },
+                    features: [
+                        {title: {vi: "Màn Hình 6.9 Inch", en: "6.9-Inch Display"}, desc: {vi: "Kích thước siêu lớn hiển thị thông tin rõ ràng, giao diện được tối ưu cho thao tác chạm mượt mà.", en: "Super-large size clearly displays information, UI optimized for smooth touch interactions."}}, 
+                        {title: {vi: "Cá Nhân Hóa Giao Diện", en: "UI Customization"}, desc: {vi: "Hỗ trợ thay đổi theme, upload ảnh nền cá nhân và tùy biến layout các nút điều khiển theo thói quen.", en: "Supports theme changes, custom background uploads, and button layout customization."}}, 
+                        {title: {vi: "Tích Hợp 3 Lộ Đèn", en: "3 Built-in Relays"}, desc: {vi: "Chứa sẵn 3 relay vật lý bên trong để điều khiển trực tiếp 3 lộ đèn mà không cần mua thêm module.", en: "Contains 3 physical relays inside to directly control 3 lighting circuits without extra modules."}}, 
+                        {title: {vi: "Màn Hình Đa Chức Năng", en: "Multi-functional"}, desc: {vi: "Xem được camera, đàm thoại trực tiếp, cho phép mở khóa, mở cổng trực tiếp trên màn hình.", en: "View cameras, direct intercom, unlock doors, and open gates directly from the screen."}}
+                    ] 
+                },
+                { 
+                    type: "Smart Switch", name: "Aqara Z1 Pro", image: "images/aqara-z1pro.png",
+                    desc1: {
+                        vi: "Định nghĩa lại tiêu chuẩn của công tắc thông minh với dải cảm ứng trượt (slider) độc quyền và ngôn ngữ thiết kế hoàn mỹ.",
+                        en: "Redefines smart switch standards with an exclusive sliding touch strip and flawless design language."
+                    },
+                    desc2: {
+                        vi: "Trải nghiệm dimming đèn hoặc mở rèm cửa cực kỳ mượt mà chỉ bằng thao tác vuốt dọc theo thân công tắc, kết hợp phản hồi rung Haptic chân thực.",
+                        en: "Experience ultra-smooth light dimming or curtain opening with a vertical swipe, combined with realistic Haptic vibration feedback."
+                    },
+                    features: [
+                        {title: {vi: "Slider Cảm Ứng", en: "Touch Slider"}, desc: {vi: "Dải trượt cảm ứng dùng để điều chỉnh độ sáng đèn, rèm cửa hoặc nhiệt độ màu siêu mượt.", en: "Touch slider used to adjust light brightness, curtains, or color temperature super smoothly."}}, 
+                        {title: {vi: "Phản Hồi Chạm Cơ Học", en: "Haptic Feedback"}, desc: {vi: "Chạm mở đèn tinh tế nhẹ nhàng, chính xác, không phát ra tiếng ồn. Cảm giác như phím đàn.", en: "Delicate, gentle, and precise touch without noise. Feels like pressing piano keys."}}, 
+                        {title: {vi: "Bố Trí Linh Hoạt", en: "Flexible Layout"}, desc: {vi: "Kích thước vuông 86x86 phù hợp với hầu hết công trình, lên đến 3 nút đèn và 1 nút ngữ cảnh.", en: "Square 86x86 size fits most modern constructions, up to 3 light buttons and 1 scene button."}}, 
+                        {title: {vi: "Chuẩn Zigbee 3.0", en: "Zigbee 3.0"}, desc: {vi: "Đảm bảo kết nối mạng lưới siêu nhanh, ổn định và tương thích chéo hoàn hảo với Apple Home.", en: "Ensures ultra-fast, stable mesh networking and perfect cross-compatibility with Apple Home."}}
+                    ] 
+                },
+                { 
+                    type: "Smart Downlight", name: "Aqara T2 Pro", image: "images/aqara-t2pro.png",
+                    desc1: {
+                        vi: "Giải pháp chiếu sáng kiến trúc đỉnh cao, mang lại ánh sáng chất lượng rực rỡ và thiết kế chống chói sâu tinh tế bảo vệ mắt.",
+                        en: "The pinnacle architectural lighting solution, delivering brilliant quality light and a sophisticated deep anti-glare design to protect eyes."
+                    },
+                    desc2: {
+                        vi: "Mô phỏng hoàn hảo nhịp sinh học tự nhiên. Tự động thay đổi độ sáng và nhiệt độ màu theo chu kỳ mặt trời.",
+                        en: "Perfectly simulates the natural circadian rhythm. Automatically changes brightness and color temperature according to the solar cycle."
+                    },
+                    features: [
+                        {title: {vi: "Dimming 1/10000", en: "1/10000 Dimming"}, desc: {vi: "Công nghệ làm mờ siêu mịn, không nhấp nháy, chuyển đổi trạng thái ánh sáng êm ái như tự nhiên.", en: "Ultra-smooth dimming technology, no flickering, smooth light transitions like natural light."}}, 
+                        {title: {vi: "Chỉ Số Hoàn Màu RA>96", en: "CRI RA>96"}, desc: {vi: "Phản ánh trung thực và rực rỡ màu sắc của đồ nội thất, tranh ảnh nghệ thuật trong không gian sống.", en: "Faithfully and brilliantly reflects the colors of furniture and artwork in your living space."}}, 
+                        {title: {vi: "Ánh Sáng Sinh Học", en: "Circadian Lighting"}, desc: {vi: "Đồng bộ dải nhiệt độ màu theo thời gian thực, hỗ trợ giấc ngủ và sự tập trung.", en: "Synchronizes the color temperature range in real-time, supporting sleep and focus."}}, 
+                        {title: {vi: "Tản Nhiệt Cao Cấp", en: "Premium Heat Sink"}, desc: {vi: "Thiết kế thân nhôm đúc nguyên khối tản nhiệt tuyệt vời giúp tăng tuổi thọ và độ ổn định của chip LED.", en: "Excellent monolithic die-cast aluminum heat sink design increases LED chip lifespan and stability."}}
+                    ] 
+                }
             ];
 
             let sigIndex = 0;
@@ -730,16 +975,17 @@
             const sigImage = document.getElementById('sig-image');
 
             function renderSig() {
-                document.getElementById('sig-type').textContent = sigProducts[sigIndex].type;
-                document.getElementById('sig-name').textContent = sigProducts[sigIndex].name;
-                document.getElementById('sig-desc1').textContent = sigProducts[sigIndex].desc1;
-                document.getElementById('sig-desc2').textContent = sigProducts[sigIndex].desc2;
-                sigImage.src = sigProducts[sigIndex].image;
+                const prod = sigProducts[sigIndex];
+                document.getElementById('sig-type').textContent = prod.type;
+                document.getElementById('sig-name').textContent = prod.name;
+                document.getElementById('sig-desc1').textContent = prod.desc1[currentLang];
+                document.getElementById('sig-desc2').textContent = prod.desc2[currentLang];
+                sigImage.src = prod.image;
                 
-                sigFeaturesDOM.innerHTML = sigProducts[sigIndex].features.map(f => `
+                sigFeaturesDOM.innerHTML = prod.features.map(f => `
                     <div class="bg-white border border-gray-200 border-l-4 border-l-cyan-600 rounded-2xl p-6 shadow-card-float hover:shadow-card-float-hover hover:-translate-y-1 transition-all duration-300">
-                        <h4 class="text-cyan-700 font-bold uppercase text-[15px] tracking-wide mb-2">${f.title}</h4>
-                        <p class="text-gray-600 font-medium text-[14px] leading-relaxed">${f.desc}</p>
+                        <h4 class="text-cyan-700 font-bold uppercase text-[15px] tracking-wide mb-2">${f.title[currentLang]}</h4>
+                        <p class="text-gray-600 font-medium text-[14px] leading-relaxed">${f.desc[currentLang]}</p>
                     </div>
                 `).join('');
             }
@@ -754,33 +1000,52 @@
             }
 
             if (document.getElementById('btn-next-sig')) {
-                renderSig();
                 document.getElementById('btn-next-sig').addEventListener('click', () => changeSig('next'));
                 document.getElementById('btn-prev-sig').addEventListener('click', () => changeSig('prev'));
             }
 
             // ==========================================
-            // 4. LOGIC SLIDER CÔNG TRÌNH THỰC TẾ
+            // 4. LOGIC SLIDER CÔNG TRÌNH THỰC TẾ (SONG NGỮ)
             // ==========================================
             const projects = [
                 {
-                    title: "Biệt thự The Mainson", owner: "Mr Hong", location: "Elite Town, PhnomPenh, Campuchia",
+                    title: { vi: "Biệt thự The Mainson", en: "The Mainson Villa" }, 
+                    ownerLabel: { vi: "Chủ đầu tư", en: "Owner" },
+                    owner: "Mr Hong", 
+                    locationLabel: { vi: "Địa chỉ", en: "Location" },
+                    location: { vi: "Elite Town, PhnomPenh, Campuchia", en: "Elite Town, PhnomPenh, Cambodia" },
                     images: ["images/du-an-1-a.jpg", "images/du-an-1-b.jpg", "images/du-an-1-c.jpg"]
                 },
                 {
-                    title: "Villa Quận 7", owner: "Anh Triệu & Chị Vy", location: "Hoàng Quốc Việt, Quận 7",
+                    title: { vi: "Villa Quận 7", en: "District 7 Villa" }, 
+                    ownerLabel: { vi: "Chủ đầu tư", en: "Owner" },
+                    owner: "Anh Triệu & Chị Vy", 
+                    locationLabel: { vi: "Địa chỉ", en: "Location" },
+                    location: { vi: "Hoàng Quốc Việt, Quận 7", en: "Hoang Quoc Viet, D7" },
                     images: ["images/du-an-2-a.jpg", "images/du-an-2-b.jpg", "images/du-an-2-c.jpg"]
                 },
                 {
-                    title: "Nhà ở gia đình", owner: "Anh Duy", location: "Biên Hòa, Đồng Nai",
+                    title: { vi: "Nhà ở gia đình", en: "Family Home" }, 
+                    ownerLabel: { vi: "Chủ đầu tư", en: "Owner" },
+                    owner: "Anh Duy", 
+                    locationLabel: { vi: "Địa chỉ", en: "Location" },
+                    location: { vi: "Biên Hòa, Đồng Nai", en: "Bien Hoa, Dong Nai" },
                     images: ["images/du-an-3-a.jpg", "images/du-an-3-b.jpg", "images/du-an-3-c.jpg"]
                 },
                 {
-                    title: "Nhà ở gia đình", owner: "Chị Thi", location: "Lagi, Lâm Đồng",
+                    title: { vi: "Nhà ở gia đình", en: "Family Home" }, 
+                    ownerLabel: { vi: "Chủ đầu tư", en: "Owner" },
+                    owner: "Chị Thi", 
+                    locationLabel: { vi: "Địa chỉ", en: "Location" },
+                    location: { vi: "Lagi, Lâm Đồng", en: "Lagi, Lam Dong" },
                     images: ["images/du-an-4-a.jpg", "images/du-an-4-b.jpg", "images/du-an-4-c.jpg"]
                 },
                 {
-                    title: "Chuỗi biệt thự Tiền Giang", owner: "Chú Hiếu", location: "Gò Công, Tiền Giang",
+                    title: { vi: "Chuỗi biệt thự Tiền Giang", en: "Tien Giang Villas Chain" }, 
+                    ownerLabel: { vi: "Chủ đầu tư", en: "Owner" },
+                    owner: "Chú Hiếu", 
+                    locationLabel: { vi: "Địa chỉ", en: "Location" },
+                    location: { vi: "Gò Công, Tiền Giang", en: "Go Cong, Tien Giang" },
                     images: ["images/du-an-5-a.jpg", "images/du-an-5-b.jpg", "images/du-an-5-c.jpg"]
                 }
             ];
@@ -792,18 +1057,15 @@
                 const p = projects[projIndex];
                 const isEven = projIndex % 2 === 0;
                 
-                // Helper tạo HTML cho 1 ảnh trong dự án có tích hợp nút Phóng to
                 const imgBlock = (src, extraClasses) => `
                     <div class="${extraClasses} rounded-2xl overflow-hidden shadow-md relative cursor-pointer group/img" onclick="window.openLightbox('${src}')">
                         <img src="${src}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105">
-                        <!-- Lớp phủ & Icon mở rộng hiện lên khi di chuột -->
                         <div class="absolute inset-0 bg-black/0 group-hover/img:bg-black/30 transition-all duration-300 flex items-center justify-center">
                             <i class="fa-solid fa-expand text-white text-3xl opacity-0 group-hover/img:opacity-100 transition-all duration-300 transform scale-50 group-hover/img:scale-100 drop-shadow-md"></i>
                         </div>
                     </div>
                 `;
 
-                // Viết tách riêng 2 Layout để sửa triệt để lỗi căn khung Grid
                 let gridHtml = '';
                 if (isEven) {
                     gridHtml = `
@@ -830,11 +1092,11 @@
                 projWrapper.innerHTML = `
                     <div class="project-item group">
                         <div class="mb-6 text-center md:text-left">
-                            <h3 class="text-3xl font-extrabold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">${p.title}</h3>
+                            <h3 class="text-3xl font-extrabold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">${p.title[currentLang]}</h3>
                             <div class="flex flex-col md:flex-row gap-2 md:gap-6 text-gray-500 font-medium justify-center md:justify-start">
-                                <span class="flex items-center gap-2"><i class="fa-regular fa-user text-cyan-600"></i> Chủ đầu tư: ${p.owner}</span>
+                                <span class="flex items-center gap-2"><i class="fa-regular fa-user text-cyan-600"></i> ${p.ownerLabel[currentLang]}: ${p.owner}</span>
                                 <span class="hidden md:block text-gray-300">|</span>
-                                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-cyan-600"></i> Địa chỉ: ${p.location}</span>
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-cyan-600"></i> ${p.locationLabel[currentLang]}: ${p.location[currentLang]}</span>
                             </div>
                         </div>
                         ${gridHtml}
@@ -852,12 +1114,16 @@
             }
 
             if (document.getElementById('btn-next-proj')) {
-                renderProject();
                 document.getElementById('btn-next-proj').addEventListener('click', () => changeProject('next'));
                 document.getElementById('btn-prev-proj').addEventListener('click', () => changeProject('prev'));
                 document.getElementById('btn-next-proj-mb').addEventListener('click', () => changeProject('next'));
                 document.getElementById('btn-prev-proj-mb').addEventListener('click', () => changeProject('prev'));
             }
+
+
+            // Cài đặt Ban Đầu khi load web
+            setLanguage('vi');
+
 
             // ==========================================
             // 5. LOGIC LIGHTBOX (PHÓNG TO ẢNH SẢN PHẨM / DỰ ÁN)
@@ -869,12 +1135,10 @@
             const closeLightboxBtn = document.getElementById('close-lightbox');
             let isProductMode = false;
 
-            // Hàm mở khung ảnh lớn
             window.openLightbox = function(src, title = '', isProduct = false) {
                 isProductMode = isProduct;
                 lightboxImg.src = src;
                 
-                // Render Tiêu đề nếu có
                 if (title) {
                     lightboxTitle.textContent = title;
                     lightboxTitle.classList.remove('hidden');
@@ -882,21 +1146,17 @@
                     lightboxTitle.classList.add('hidden');
                 }
 
-                // Setup giao diện riêng biệt cho 2 chế độ: Sản phẩm vs Công trình
                 if (isProduct) {
                     lightboxHint.classList.remove('hidden');
-                    // Ảnh sản phẩm có nền trắng bọc ngoài để dễ nhận biết phạm vi "Đưa chuột ra"
                     lightboxImg.className = "max-w-[90vw] max-h-[70vh] object-contain rounded-3xl shadow-2xl transition-transform duration-300 transform scale-95 bg-white p-8";
                 } else {
                     lightboxHint.classList.add('hidden');
-                    // Ảnh công trình hiển thị full không viền trắng
                     lightboxImg.className = "max-w-[95vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-transform duration-300 transform scale-95";
                 }
 
                 lightbox.classList.remove('hidden');
                 lightbox.classList.add('flex');
                 
-                // Kích hoạt Animation
                 void lightbox.offsetWidth;
                 lightbox.classList.remove('opacity-0');
                 lightbox.classList.add('opacity-100');
@@ -904,7 +1164,6 @@
                 lightboxImg.classList.add('scale-100');
             };
 
-            // Hàm đóng khung ảnh
             const closeLightbox = () => {
                 lightbox.classList.remove('opacity-100');
                 lightbox.classList.add('opacity-0');
@@ -919,20 +1178,8 @@
             };
 
             closeLightboxBtn.addEventListener('click', closeLightbox);
-            
-            // Bấm ra ngoài nền đen để đóng
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-
-            // Di chuột ra khỏi khung ảnh để thu nhỏ (Dành riêng cho Xem Sản phẩm)
-            lightboxImg.addEventListener('mouseleave', () => {
-                if (isProductMode) {
-                    closeLightbox();
-                }
-            });
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+            lightboxImg.addEventListener('mouseleave', () => { if (isProductMode) closeLightbox(); });
 
 
             // ==========================================
@@ -941,35 +1188,28 @@
             const contactForm = document.getElementById('contact-form');
             if(contactForm) {
                 contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Chặn tải lại trang
+                    e.preventDefault();
                     const btn = contactForm.querySelector('button[type="submit"]');
                     const originalText = btn.innerText;
-                    btn.innerText = "ĐANG GỬI...";
+                    btn.innerText = currentLang === 'vi' ? "ĐANG GỬI..." : "SENDING...";
                     btn.disabled = true;
 
-                    // Lấy dữ liệu người dùng nhập
                     const name = contactForm.name.value;
                     const phone = contactForm.phone.value;
                     const message = contactForm.message.value;
 
-                    // --- ANH OTIZ ĐIỀN THÔNG TIN TELEGRAM VÀO ĐÂY ---
-                    // Ví dụ Token: "123456789:ABCdefGhI_jkLmnop"
                     const BOT_TOKEN = "8920731797:AAGu6eIVgnBSIcwM2G3CDomVyFN8sVWC-CI"; 
-                    // Ví dụ Chat ID: "987654321" (hoặc ID của nhóm chat)
                     const CHAT_ID = "5898963732"; 
-                    // ------------------------------------------------
 
                     if(BOT_TOKEN === "ĐIỀN_TOKEN_VÀO_ĐÂY") {
-                        alert("Hệ thống gửi tin nhắn chưa được cài đặt Telegram Bot Token. Cần điền Token vào code để hoạt động!");
+                        alert(currentLang === 'vi' ? "Chưa cấu hình Telegram Token!" : "Telegram Token is not configured!");
                         btn.innerText = originalText;
                         btn.disabled = false;
                         return;
                     }
 
-                    // Nội dung tin nhắn gửi qua Telegram
                     const text = `🔥 CÓ KHÁCH HÀNG MỚI!\n\n👤 Tên: ${name}\n📞 SĐT: ${phone}\n💬 Nhu cầu: ${message}`;
 
-                    // Gọi API gửi tin nhắn của Telegram
                     fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -978,14 +1218,14 @@
                     .then(res => res.json())
                     .then(data => {
                         if(data.ok) {
-                            alert("Cảm ơn anh/chị. Yêu cầu tư vấn đã được gửi thành công!");
-                            contactForm.reset(); // Xóa trắng form sau khi gửi
+                            alert(currentLang === 'vi' ? "Cảm ơn anh/chị. Yêu cầu tư vấn đã được gửi thành công!" : "Thank you. Your request has been sent successfully!");
+                            contactForm.reset();
                         } else {
-                            alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+                            alert(currentLang === 'vi' ? "Có lỗi xảy ra, vui lòng thử lại sau." : "An error occurred, please try again later.");
                         }
                     })
                     .catch(error => {
-                        alert("Lỗi kết nối mạng, vui lòng kiểm tra lại.");
+                        alert(currentLang === 'vi' ? "Lỗi kết nối mạng, vui lòng kiểm tra lại." : "Network error, please check your connection.");
                     })
                     .finally(() => {
                         btn.innerText = originalText;
